@@ -42,6 +42,8 @@ Page({
         }
       })
     }
+    //设置页面信息
+    this.setPageContent();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -50,5 +52,18 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+  //设置页面内容
+  setPageContent:function(){
+    var that=this;
+    var url='/appUser/getActivityList';
+    console.log(url);
+    var data={pageNumber:'1',pageSize:'10'};
+      app.post(url,data,function(resData){
+        that.setData({
+          rows:resData.rows
+        })
+        console.log(resData);
+      });
   }
 })
