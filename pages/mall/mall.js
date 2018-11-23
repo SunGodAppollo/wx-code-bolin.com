@@ -17,7 +17,7 @@ Page({
   onLoad: function (options) {
 
     this.setFenlei();
-    this.setGoodsByFid('7fd38325192a48d594e4c1b2e72d668a');
+    //this.setGoodsByFid('7fd38325192a48d594e4c1b2e72d668a');
 
   },
 
@@ -73,8 +73,9 @@ Page({
   bindchange:function(e){
     const that  = this;
     that.setData({
-      currentData: e.detail.current
-    })
+      currentData: e.detail.current,
+    });
+
   },
   //点击切换，滑块index赋值
   checkCurrent:function(e){
@@ -85,8 +86,11 @@ Page({
     }else{
 
       that.setData({
-        currentData: e.target.dataset.current
-      })
+        currentData: e.target.dataset.current,
+        id:e.target.dataset.fid
+      });
+      //更新
+      this.setGoodsByFid(that.data.id);
     }
   },
   //显示详情
@@ -108,7 +112,7 @@ Page({
         })
         console.log(resData.data[0].id);
 
-        //that.setGoodsByFid(resData.data[0].id);
+        that.setGoodsByFid(resData.data[0].id);
 
       });
   },
