@@ -1,51 +1,72 @@
 <!--pages/my/selfinfos/selfinfos.wxml-->
 <view class='infos'>
-	<view class='infos-main'>
-		<view class='infos-list-p' bindtap='upImgFunc'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>头像</text>
-				<image class='infos-header' src='{{infos.headImg}}' mode='aspectFill' wx:if="{{infos.headImg}}"></image>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-		<view class='infos-list-p'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>用户名</text>
-				<text class='infos-text' wx:if="{{infos.name}}">{{infos.name}}</text>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-		<view class='infos-list-p'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>性别</text>
-				<text wx:if="{{infos.sex === 'man'}}" class='infos-text'>男</text>
-				<text wx:elif="{{infos.sex === 'woman'}}" class='infos-text'>女</text>
-				<text wx:else class='infos-text'>未知</text>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-		<view class='infos-list-p'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>生日</text>
-				<text class='infos-text' wx:if="{{infos.birthday}}">{{infos.birthday}}</text>
-				<text class='infos-text' wx:else>未知</text>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-		<view class='infos-list-p'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>修改密码</text>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-		<view class='infos-list-p'>
-			<view class='infos-list-m'>
-				<text class='infos-name'>我的收货地址</text>
-				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
-			</view>
-		</view>
-	</view>
-	<view class='infos-bottom'>
-		<button class='infos-button' bindtap='outFunc'>退出账号</button>
-	</view>
+    <view class='infos-main'>
+        <view class='infos-list-p' bindtap='upImgFunc'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>头像</text>
+                <image class='infos-header' src='{{infos.headImg}}' mode='aspectFill' wx:if="{{infos.headImg}}"></image>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+        <view class='infos-list-p' bindtap='changeNameFunc'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>用户名</text>
+                <text class='infos-text' wx:if="{{infos.name}}">{{infos.name}}</text>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+        <view class='infos-list-p' bindtap='changeSexFunc'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>性别</text>
+                <text wx:if="{{infos.sex === 'man'}}" class='infos-text'>男</text>
+                <text wx:elif="{{infos.sex === 'woman'}}" class='infos-text'>女</text>
+                <text wx:else class='infos-text'>未知</text>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+        <view class='infos-list-p' bindtap='changeBirthFunc'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>生日</text>
+                <text class='infos-text' wx:if="{{infos.birthday}}">{{infos.birthday}}</text>
+                <text class='infos-text' wx:else>未知</text>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+        <view class='infos-list-p'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>修改密码</text>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+        <view class='infos-list-p'>
+            <view class='infos-list-m'>
+                <text class='infos-name'>我的收货地址</text>
+                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+            </view>
+        </view>
+    </view>
+    <view class='infos-bottom'>
+        <button class='infos-button' bindtap='outFunc'>退出账号</button>
+    </view>
+    <van-dialog use-slot show="{{ nameShow }}" show-cancel-button bind:close="onNameClose">
+        <view class='sex-dialog-box'>
+            <van-field value="{{ username }}" label="用户名" placeholder="请输入用户名" bind:change="onNameChange" />
+        </view>
+    </van-dialog>
+    <van-dialog use-slot show="{{ sexShow }}" show-cancel-button bind:close="onSexClose">
+        <view class='sex-dialog-box'>
+            <radio-group class="radio-group" bindchange="radioChange">
+                <label class="radio">
+                    <radio value="{{man.value}}" checked="{{man.checked}}" />{{man.name}}
+                </label>
+                <label class="radio">
+                    <radio value="{{woman.value}}" checked="{{woman.checked}}" />{{woman.name}}
+                </label>
+            </radio-group>
+        </view>
+    </van-dialog>
+    <!-- 时间弹窗 -->
+    <van-popup show="{{ dateshow }}" bind:close="onDateClose" position="bottom">
+        <van-datetime-picker type="date" min-date="{{ minDate }}" max-date="{{ maxDate }}" bind:confirm="onDateConfirm" bind:change="onDateChange" bind:cancel="onDateClose" />
+    </van-popup>
 </view>

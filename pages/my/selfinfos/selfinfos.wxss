@@ -63,3 +63,26 @@
 .infos-button.button-hover {
 	opacity: .8;
 }
+.sex-dialog-box {
+	height: 200rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.radio {
+	font-size: 28rpx;
+	color: #333;
+	display: flex;
+	flex-direction: row;
+}
+.radio radio {
+	margin-right: 0.2em;
+}
+.radio:first-child {
+	margin-right: 4em;
+}
+.radio-group {
+	display: flex;
+	flex-direction: row;
+}
