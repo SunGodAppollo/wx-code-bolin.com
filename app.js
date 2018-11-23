@@ -33,15 +33,18 @@ App({
             }
         })
     },
-    post: function(url,data,func) {
+	post: function (url, data, func) {
 		wx.showLoading({
 			title: '加载中',
 		});
-        wx.request({
-            url: getApp().globalData.appUrl + url,
+		wx.request({
+			url: getApp().globalData.appUrl + url,
 			data: data,
 			method: "POST",
-			success: function(r) {
+			header: {
+				'content-type': 'application/x-www-form-urlencoded'
+			},
+			success: function (r) {
 				wx.hideLoading();
 				if (Number(r.data.code) === -1) {
 					wx.showToast({
@@ -52,16 +55,36 @@ App({
 				}
 				return func(r.data);
 			},
-			fail: function() {
+			fail: function () {
 				wx.hideLoading();
 			}
-        });
-    },
-    get: function() {
-        console.log("测试");
-    },
-    globalData: {
-        userInfo: null,
-        appUrl: "http://39.104.238.35:3333"
-    }
+		});
+	},
+	isLogin: function () {
+		wx.getStorage({
+			key: "user",
+			success(r) {
+				var now = Number(new Date());
+				if ((now - r.data.timeStamp) > (1000 * 60 * 60 * 24)) {
+					wx.clearStorage();
+				}
+			},
+			fail(r) {
+				let pages = getCurrentPages();
+				let currPage = null;
+				if (pages.length) {
+					currPage = pages[pages.length - 1];
+				}
+				getApp().globalData.routerName = currPage.__route__;
+				wx.redirectTo({
+					url: '/pages/login/login'
+				})
+			}
+		});
+	},
+	globalData: {
+		userInfo: null,
+		appUrl: "http://39.104.238.35:3333",
+		routerName: ""
+	}
 })

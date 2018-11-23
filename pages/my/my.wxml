@@ -3,16 +3,15 @@
 	<view class='top'>
 		<image class='top-bg' src='/public/img/my_top.png'></image>
 		<view class='top-main'>
-			<image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+			<image wx:if="{{infos.backgroundPicUrl === ''}}" class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+			<image wx:else class='top-main-bg' src='{{infos.backgroundPicUrl}}' mode='aspectFill'></image>
 			<view class='top-main-box'>
 				<view class='top-main-first'>
-					<view class='top-main-first-title'>
-						logo
-					</view>
-					<text class='top-main-first-name'>店铺名称</text>
-					<view class='top-main-first-code bg-contain'></view>
+					<image class='top-main-first-title' src='{{infos.logoUrl}}' mode='aspectFill'></image>
+					<text class='top-main-first-name'>{{infos.title}}</text>
+					<view class='top-main-first-code bg-contain' style='background-image:url({{infos.qrCode}})'></view>
 				</view>
-				<view class='top-main-second'>123456789</view>
+				<view class='top-main-second'>{{infos.cardCore}}</view>
 			</view>
 		</view>
 	</view>

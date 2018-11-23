@@ -9,19 +9,20 @@
 	</view>
 	<block wx:if="{{!status}}">
 		<view class='login-box' style='margin-bottom: 20rpx;'>
-			<input class='login-box-input' placeholder='请输入手机号' type="number" maxlength='11'></input>
-			<text class='login-box-button' bindtap='getCodeFunc'>获取验证码</text>
+			<input class='login-box-input' placeholder='请输入手机号' type="number" maxlength='11' bindinput='telFunc'></input>
+			<text class='login-box-button' bindtap='getCodeFunc' wx:if="{{codeTime<=0}}">获取验证码</text>
+			<text class='login-box-button' wx:else>{{codeTime}}s</text>
 		</view>
 		<view class='login-box'>
-			<input class='login-box-input' placeholder='请输入验证码'></input>
+			<input class='login-box-input' placeholder='请输入验证码' bindinput='codeFunc'></input>
 		</view>
 	</block>
 	<block wx:if="{{status}}">
 		<view class='login-box' style='margin-bottom: 20rpx;'>
-			<input class='login-box-input' placeholder='请输入账号'></input>
+			<input class='login-box-input' placeholder='请输入账号' bindinput='usernameFunc'></input>
 		</view>
 		<view class='login-box'>
-			<input class='login-box-input' placeholder='请输入密码' password='true'></input>
+			<input class='login-box-input' placeholder='请输入密码' password='true' bindinput='passwordFunc'></input>
 		</view>
 	</block>
 	<button class='login-button' wx:if="{{status}}"bindtap="userLoginFunc">登录</button>

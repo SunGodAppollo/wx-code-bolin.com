@@ -12,7 +12,7 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-
+		getApp().isLogin();
     },
 
     /**
@@ -26,7 +26,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-
+		this.getListFunc();
     },
 
     /**
@@ -65,5 +65,13 @@ Page({
     },
     checkboxChange: function(e) {
 		console.log('checkbox发生change事件，携带value值为：', e.detail.value);
+	},
+	//获取数据
+	getListFunc() {
+		getApp().post("/mall/getShoppingCartList", {
+			userId: wx.getStorageSync("user").id
+		}, function (r) {
+			console.log(r);
+		});
 	}
 })

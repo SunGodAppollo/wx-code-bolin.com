@@ -5,9 +5,13 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		date: '2016-09-01',
-		sex:['男','女'],
-		index: 0,
+		infos: {
+			headImg: "",
+			id: "",
+			name: "",
+			sex: "",
+			birthday: ""
+		}
 	},
 
 	/**
@@ -28,7 +32,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.infosFunc();
 	},
 
 	/**
@@ -65,16 +69,71 @@ Page({
 	onShareAppMessage: function () {
 
 	},
-	bindDateChange: function(e) {
-    this.setData({
-      date: e.detail.value
-    })
-  },
-	bindSexChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      index: e.detail.value
-    })
-  },
 
+	//获取用户信息
+	infosFunc: function() {
+		var self = this;
+		getApp().post('/appUser/getUserInfo',{
+			userId: wx.getStorageSync('user').id
+		},function(r) {
+			if(r.code === 0) {
+				self.setData({
+					infos: r.data
+				})
+			}
+		});
+	},
+
+	//退出登录
+	outFunc: function() {
+		wx.showModal({
+			title: '提示',
+			content: '是否退出?',
+			confirmColor: '#f5c243',
+			success(res) {
+				if (res.confirm) {
+					wx.showLoading({
+						title: '加载中',
+					})
+					wx.removeStorage({
+						key: 'user',
+						success(res) {
+							setTimeout(function () {
+								wx.hideLoading()
+								wx.reLaunch({
+									url: '/pages/index/index'
+								})
+							}, 1000)
+						}
+					})
+				}
+			}
+		})
+	},
+
+	//上传头像
+	upImgFunc: function() {
+		wx.chooseImage({
+			count: 1,
+			sizeType: ['original', 'compressed'],
+			sourceType: ['album', 'camera'],
+			success(res) {
+				// tempFilePath可以作为img标签的src属性显示图片
+				const tempFilePaths = res.tempFilePaths;
+				wx.uploadFile({
+					url: getApp().globalData.appUrl +'/appUser/upImgs',
+					filePath: tempFilePaths[0],
+					name: 'file',
+					header: {
+						"Content-Type": "multipart/form-data",
+						'accept': 'application/json'
+					},
+					success(res) {
+						console.log(res);
+						//do something
+					}
+				})
+			}
+		})
+	}
 })

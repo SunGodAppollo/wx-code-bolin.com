@@ -1,66 +1,89 @@
 // pages/my/my.js
 Page({
 
-  /**
-   * 页面的初始数据
-   */
-  data: {
+    /**
+     * 页面的初始数据
+     */
+    data: {
+		infos: {
+			backgroundPicUrl: "",
+			cardCore: "",
+			logoUrl: "",
+			oneCode: "",
+			qrCode: "",
+			title: ""
+		}
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面加载
+     */
+    onLoad: function(options) {
+        console.log("监听页面加载");
+        getApp().isLogin();
+    },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+    /**
+     * 生命周期函数--监听页面初次渲染完成
+     */
+    onReady: function() {
+        console.log("监听页面初次渲染完成");
+		this.getInfosFunc();
+    },
 
-  },
+    /**
+     * 生命周期函数--监听页面显示
+     */
+    onShow: function() {
+        console.log("监听页面显示");
+    },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+    /**
+     * 生命周期函数--监听页面隐藏
+     */
+    onHide: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+    /**
+     * 生命周期函数--监听页面卸载
+     */
+    onUnload: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
+    /**
+     * 页面相关事件处理函数--监听用户下拉动作
+     */
+    onPullDownRefresh: function() {
 
-  },
+    },
 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
+    /**
+     * 页面上拉触底事件的处理函数
+     */
+    onReachBottom: function() {
 
-  },
+    },
 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
+    /**
+     * 用户点击右上角分享
+     */
+    onShareAppMessage: function() {
 
-  },
+    },
 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
+    //获取会员卡数据
+    getInfosFunc() {
+		var self = this;
+		getApp().post("/appUser/getCardInfo", {
+            userId: wx.getStorageSync("user").id
+        }, function(r) {
+            if(r.code === 0) {
+				self.setData({
+					infos: r.data
+				})
+			}
+        });
+    }
 })

@@ -1,43 +1,34 @@
 <!--pages/my/selfinfos/selfinfos.wxml-->
 <view class='infos'>
 	<view class='infos-main'>
-		<view class='infos-list-p'>
+		<view class='infos-list-p' bindtap='upImgFunc'>
 			<view class='infos-list-m'>
 				<text class='infos-name'>头像</text>
-				<image class='infos-header' src='/public/img/example.jpg' mode='aspectFill'></image>
+				<image class='infos-header' src='{{infos.headImg}}' mode='aspectFill' wx:if="{{infos.headImg}}"></image>
 				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
 			</view>
 		</view>
 		<view class='infos-list-p'>
 			<view class='infos-list-m'>
 				<text class='infos-name'>用户名</text>
-				<text class='infos-text'>佚名</text>
+				<text class='infos-text' wx:if="{{infos.name}}">{{infos.name}}</text>
 				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
 			</view>
 		</view>
 		<view class='infos-list-p'>
 			<view class='infos-list-m'>
 				<text class='infos-name'>性别</text>
-
-				<picker mode="selector" bindchange="bindSexChange" value="{{index}}" range="{{sex}}" >
-			    <view class="picker">
-						<text class='infos-text'>{{sex[index]}}</text>
-
-			    </view>
-			  </picker>
-
+				<text wx:if="{{infos.sex === 'man'}}" class='infos-text'>男</text>
+				<text wx:elif="{{infos.sex === 'woman'}}" class='infos-text'>女</text>
+				<text wx:else class='infos-text'>未知</text>
 				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
 			</view>
 		</view>
 		<view class='infos-list-p'>
 			<view class='infos-list-m'>
 				<text class='infos-name'>生日</text>
-				<picker mode="date" value="{{date}}" start="1990-10-11" end="2017-09-01" bindchange="bindDateChange">
-			     <view class="picker">
-						 <text class='infos-text'>{{date}}</text>
-			     </view>
-   	 		</picker>
-
+				<text class='infos-text' wx:if="{{infos.birthday}}">{{infos.birthday}}</text>
+				<text class='infos-text' wx:else>未知</text>
 				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
 			</view>
 		</view>
@@ -55,6 +46,6 @@
 		</view>
 	</view>
 	<view class='infos-bottom'>
-		<button class='infos-button'>退出账号</button>
+		<button class='infos-button' bindtap='outFunc'>退出账号</button>
 	</view>
 </view>
