@@ -15,7 +15,7 @@
       <text class="goods-title">{{item.name}}</text>
       <view style="padding: 15rpx;">
         <view class="goods-info-left">￥{{item.price}}</view>
-        <view class="goods-info-right">库存:{{item.chun}}</view>
+        <view class="goods-info-right">库存:{{item.stock}}</view>
       </view>
     </view>
     </block>

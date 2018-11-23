@@ -8,21 +8,7 @@ Page({
   data: {
     currentData:0,
     id:'',
-    goodslis:[
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'}
-    ]
+    goodslis:[]
   },
 
   /**
