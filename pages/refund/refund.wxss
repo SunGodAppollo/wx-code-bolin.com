@@ -1,0 +1,52 @@
+/* pages/refund/refund.wxss */
+
+.refund-box {
+	margin-top: 30rpx;
+	background-color: #fff;
+	padding: 0 0 35rpx 30rpx;
+	font-size: 28rpx;
+	color: #333;
+}
+.refund-bottom {
+	padding: 90rpx 70rpx 0;
+}
+.refund-box-short {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 1rpx solid #e5e5e5;
+	font-size: 28rpx;
+	color: #333;
+	height: 98rpx;
+	padding-right: 30rpx;
+}
+.refund-input {
+	flex-grow: 1;
+	margin-left: 0.5em;
+}
+.refund-box-long {
+	font-size: 28rpx;
+	color: #333;
+	padding: 30rpx 30rpx 0 0;
+	display: flex;
+	flex-direction: row;
+}
+.refund-box-long textarea {
+	padding-left: 0.5em;
+	min-height: 4em;
+}
+.refund-label {
+	padding-top: 35rpx;
+}
+.refund-box-label {
+	margin-bottom: 40rpx;
+	display: block;
+}
+.refund-box-img {
+	width: 120rpx;
+	height: 120rpx;
+	margin-right: 30rpx;
+}
+.refund-img-box {
+	display: flex;
+}

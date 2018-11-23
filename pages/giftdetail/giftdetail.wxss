@@ -1,0 +1,77 @@
+/* pages/giftdetail/giftdetail.wxss */
+.swiper-img {
+	width: 100%;
+	height: 300rpx;
+}
+swiper {
+	height: 300rpx;
+}
+.detail-first {
+	margin-bottom: 30rpx;
+	background-color: #fff;
+	box-sizing: border-box;
+	padding: 25rpx;
+}
+.detail-first-title {
+	font-size: 28rpx;
+	color: #333;
+	margin-bottom: 25rpx;
+}
+.detail-first-box {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.detail-first-money {
+	color: #e13c3c;
+	font-size: 28rpx;
+}
+.detail-first-num {
+	font-size: 28rpx;
+	color: #999;
+}
+.detail-second {
+	padding: 25rpx;
+	background-color: #fff;
+	margin-bottom: 100rpx;
+}
+.detail-bottom {
+	width: 100%;
+	height: 98rpx;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: #fff;
+	display: flex;
+	flex-direction: row;
+}
+.detail-left {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.detail-left-img {
+	width: 36rpx;
+	height: 36rpx;
+	margin-bottom: 14rpx;
+}
+.detail-left-chat {
+	color: #666;
+	font-size: 22rpx;
+}
+.detail-submit {
+	background-color: #f5c243;
+	width: 50%;
+	height: 100%;
+	font-size: 26rpx;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.detail-submit:active {
+	opacity: .8;
+}

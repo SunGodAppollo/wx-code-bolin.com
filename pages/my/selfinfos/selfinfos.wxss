@@ -1,0 +1,65 @@
+/* pages/my/selfinfos/selfinfos.wxss */
+.infos {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.infos-main {
+	margin-top: 30rpx;
+	background-color: #fff;
+}
+.infos-list-p {
+	padding-left: 30rpx;
+	box-sizing: border-box;
+	width: 100vw;
+	min-height: 90rpx;
+	display: flex;
+}
+.infos-list-p:active {
+	opacity: .8;
+}
+.infos-list-p:last-child .infos-list-m {
+	border-bottom: none;
+}
+.infos-list-m {
+	border-bottom: 1rpx solid #e5e5e5;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	box-sizing: border-box;
+	padding-right: 30rpx;
+}
+.infos-name {
+	color: #474747;
+	font-size: 28rpx;
+	flex-grow: 1;
+}
+.infos-header {
+	width: 90rpx;
+	height: 90rpx;
+	border-radius: 50%;
+	margin: 20rpx 0;
+}
+.infos-right {
+	margin-left: 25rpx;
+	width: 36rpx;
+	height: 36rpx;
+}
+.infos-text {
+	color: #999;
+	font-size: 28rpx;
+}
+.infos-bottom {
+	padding: 0 60rpx 34rpx;
+}
+.infos-button {
+	color: #fff;
+	font-size: 32rpx;
+	border-radius: 6rpx;
+	background-color: #f5c243;
+}
+.infos-button.button-hover {
+	opacity: .8;
+}

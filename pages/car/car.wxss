@@ -1,0 +1,113 @@
+/* pages/car/car.wxss */
+.car-box {
+	background-color: #fff;
+}
+.car-box:last-child {
+	margin-bottom: 150rpx;
+}
+.car-box-first {
+	margin-top: 30rpx;
+	height: 96rpx;
+	display: flex;
+	flex-direction: row;
+	padding: 0 30rpx;
+	align-items: center;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.first-title {
+	font-size: 26rpx;
+	color: #333;
+	margin-left: 20rpx;
+}
+.car-box-second {
+	padding: 15rpx 30rpx;
+}
+.car-main {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 15rpx 0;
+}
+.car-main-img {
+	width: 184rpx;
+	height: 184rpx;
+	border-radius: 10rpx;
+	margin-left: 20rpx;
+	flex-shrink: 0;
+}
+.car-main-right {
+	flex-grow: 1;
+	height: 184rpx;
+	margin-left: 25rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.car-main-top {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: row;
+}
+.car-main-title {
+	font-size: 26rpx;
+	color: #333;
+}
+.car-main-money {
+	white-space: nowrap;
+	margin-left: 65rpx;
+	font-size: 28rpx;
+	color: #e13c3c;
+}
+.car-main-bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+.car-main-delete {
+	height: 40rpx;
+	width: 40rpx;
+}
+.car-main-delete:active {
+	opacity: .8;
+}
+.car-fixed {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 98rpx;
+	background-color: #fff;
+	padding: 0 30rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	z-index: 10;
+	box-sizing: border-box;
+}
+.car-fixed-first {
+	font-size: 26rpx;
+	color: #999;
+	margin-left: 16rpx;
+	flex-grow: 1;
+}
+.car-fixed-title {
+	font-size: 28rpx;
+	color: #333;
+}
+.car-fixed-money {
+	font-size: 28rpx;
+	color: #e13c3c;
+	margin-left: 15rpx;
+}
+.car-fixed button {
+	width: 160rpx;
+	height: 68rpx;
+	font-size: 28rpx;
+	color: #fff;
+	background-color: #f5c243;
+	margin-left: 25rpx;
+}
+.car-fixed button.button-hover {
+  opacity: .8;
+}

@@ -1,0 +1,4 @@
+<!--pages/my/myassets/giftcard/giftcarddetails/giftcarddetails.wxml-->
+<view class='giftdetails'>
+	<rich-text nodes="{{nodes}}"></rich-text>
+</view>

@@ -1,0 +1,28 @@
+<!--pages/my/my.wxml-->
+<view class='container'>
+	<view class='top'>
+		<image class='top-bg' src='/public/img/my_top.png'></image>
+		<view class='top-main'>
+			<image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+			<view class='top-main-box'>
+				<view class='top-main-first'>
+					<view class='top-main-first-title'>
+						logo
+					</view>
+					<text class='top-main-first-name'>店铺名称</text>
+					<view class='top-main-first-code bg-contain'></view>
+				</view>
+				<view class='top-main-second'>123456789</view>
+			</view>
+		</view>
+	</view>
+	<view class='middle'>
+		<mylist name="个人信息" img="/public/img/infos.png" url="/pages/my/selfinfos/selfinfos"></mylist>
+		<mylist name="我的资产" img="/public/img/money.png" url="/pages/my/myassets/myassets"></mylist>
+		<mylist name="我的次卡" img="/public/img/two_card.png" url="/pages/my/mycards/mycards"></mylist>
+		<mylist name="优惠券" img="/public/img/youhuiquan.png" url="/pages/my/coupons/coupons"></mylist>
+		<mylist name="消费记录" img="/public/img/xiaofeijilu.png" url="/pages/my/records/records"></mylist>
+		<mylist name="我的积分" img="/public/img/jifen.png" url="/pages/my/integral/integral"></mylist>
+		<mylist name="我的订单" img="/public/img/order.png" url="/pages/my/myorders/myorders"></mylist>
+	</view>
+</view>

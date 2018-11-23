@@ -1,0 +1,7 @@
+/* pages/bangdingnewcard/bangdingnewcard.wxss */
+.addContent{padding: 15rpx;}
+.addInput{margin-top: 15px;}
+
+.foot{position: absolute;bottom: 0px;width: 100%;height: 50px;background: red}
+.foot-left{float: left;width: 50%;height: 50px;background-color: #fff4cd;color:#f9d578;text-align: center;line-height: 50px;}
+.foot-right{float: left;width: 50%;height: 50px;background-color: #f5c243;color:#fff;text-align: center;line-height: 50px;}

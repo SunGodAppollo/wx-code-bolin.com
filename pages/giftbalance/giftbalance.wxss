@@ -1,0 +1,15 @@
+/* pages/giftbalance/giftbalance.wxss */
+.balance {
+	margin-top: 30rpx;
+	padding: 44rpx 30rpx;
+	background-color: #fff;
+}
+.balance-title {
+	font-size: 30rpx;
+	color: #333;
+	margin-bottom: 64rpx;
+}
+.balance-money {
+	color: #e13c3c;
+	font-size: 56rpx;
+}

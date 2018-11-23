@@ -1,0 +1,25 @@
+<!--pages/giftdetail/giftdetail.wxml-->
+<view class='detail' indicator-dots="true">
+	<swiper indicator-dots="true" indicator-color="rgba(255, 255, 255, .6)" indicator-active-color="#f5c243" autoplay="true">
+		<swiper-item wx:for="{{3}}" wx:key="{{index}}">
+			<image class='swiper-img' src='/public/img/example.jpg' mode='aspectFill'></image>
+		</swiper-item>
+	</swiper>
+	<view class='detail-first'>
+		<view class='detail-first-title'>雅诗兰黛礼品卡</view>
+		<view class='detail-first-box'>
+			<text class='detail-first-money'>¥ 590.00</text>
+			<text class='detail-first-num'>库存:10</text>
+		</view>
+	</view>
+	<view class='detail-second'>
+		<rich-text nodes="{{nodes}}"></rich-text>
+	</view>
+	<view class='detail-bottom'>
+		<view class='detail-left'>
+			<image class='detail-left-img' src='/public/img/chat.png'></image>
+			<text class='detail-left-chat'>客服</text>
+		</view>
+		<view class='detail-submit'>立即购买</view>
+	</view>
+</view>

@@ -1,0 +1,11 @@
+<!--pages/bangdingnewcard/bangdingnewcard.wxml-->
+<view class="addContent">
+  清输入礼品卡密码
+   <input class="addInput" placeholder="礼品卡密码" auto-focus/>
+</view>
+
+
+<view class="foot">
+<view class="foot-left">查询余额</view>
+<view class="foot-right">绑定</view>
+</view>

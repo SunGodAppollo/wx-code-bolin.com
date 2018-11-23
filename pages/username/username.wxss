@@ -1,0 +1,19 @@
+/* pages/username/username.wxss */
+.username {
+	margin-top: 30rpx;
+}
+.username-bottom {
+	padding: 80rpx 60rpx 0;
+}
+.username-top {
+	background-color: #fff;
+	padding: 0 30rpx;
+	height: 100rpx;
+	display: flex;
+	align-items: center;
+}
+.username-nickname {
+	font-size: 28rpx;
+	color: #333;
+	flex-grow: 1;
+}

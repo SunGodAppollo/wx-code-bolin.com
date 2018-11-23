@@ -1,0 +1,32 @@
+/* pages/my/mycards/mycards.wxss */
+.cards {
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	margin-top: 30rpx;
+}
+.cards-main {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 0 30rpx;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.cards-main:last-child {
+	border-bottom: none;
+}
+.main-head {
+	width: 80rpx;
+	height: 80rpx;
+	margin: 30rpx 30rpx 30rpx 0;
+	border-radius: 50%;
+}
+.main-title {
+	color: #474747;
+	font-size: 28rpx;
+	flex-grow: 1;
+}
+.main-right {
+	color: #474747;
+	font-size: 28rpx;
+}

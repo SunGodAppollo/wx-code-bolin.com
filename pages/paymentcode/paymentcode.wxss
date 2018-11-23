@@ -1,0 +1,22 @@
+/* pages/paymentcode/paymentcode.wxss */
+.payment {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.payment-title {
+	width: 200rpx;
+	height: 200rpx;
+	margin-bottom: 35rpx;
+	margin-top: 40rpx;
+	border-radius: 50%;
+}
+.payment-code {
+	width: 100%;
+	height: 240rpx;
+	margin-bottom: 25rpx;
+}
+.payment-text {
+	font-size: 26rpx;
+	color: #b3b3b3;
+}

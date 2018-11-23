@@ -1,0 +1,11 @@
+<!--pages/paystatus/paystatus.wxml-->
+<view class='paystatus'>
+	<view class='paystatus-top'>
+		<image class='paystatus-img' src='/public/img/success.png' mode='aspectFit'></image>
+		<text class='paystatus-title'>支付成功</text>
+	</view>
+	<view class='paystatus-cont'>实付 ¥480.00</view>
+	<view>
+		<button class='paystatus-bottom'>查看订单</button>
+	</view>
+</view>

@@ -1,0 +1,14 @@
+<!--pages/withdrawal/withdrawal.wxml-->
+<view class='withdrawal'>
+	<view class='withdrawal-box'>
+		<view class='withdrawal-title'>提现金额</view>
+		<view class='withdrawal-box-bottom'>
+			<text class='withdrawal-box-bottom-left'>¥</text>
+			<input class='withdrawal-box-bottom-right' type='number'></input>
+		</view>
+	</view>
+	<view class='withdrawal-notic'>当天24点前到账</view>
+	<view class='withdrawal-bottom'>
+		<button class='withdrawal-button'>提现</button>
+	</view>
+</view>

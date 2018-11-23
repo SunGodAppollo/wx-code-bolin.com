@@ -1,0 +1,6 @@
+<!--pages/my/myassets/myassets.wxml-->
+<view class='assets'>
+	<mylist name="我的零钱" img="/public/img/mymoney.png" url="/pages/my/myassets/mymoney/mymoney"></mylist>
+	<mylist name="我的余额" img="/public/img/balance.png" url="/pages/my/myassets/balance/balance"></mylist>
+	<mylist name="礼品卡" img="/public/img/giftcard.png" url="/pages/my/myassets/giftcard/giftcard"></mylist>
+</view>

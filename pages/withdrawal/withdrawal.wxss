@@ -1,0 +1,38 @@
+/* pages/withdrawal/withdrawal.wxss */
+.withdrawal {
+	margin-top: 30rpx;
+}
+.withdrawal-box {
+	padding: 44rpx 30rpx;
+	background-color: #fff;
+}
+.withdrawal-title {
+	font-size: 30rpx;
+	color: #333;
+	margin-bottom: 50rpx;
+}
+.withdrawal-box-bottom {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+.withdrawal-box-bottom-left {
+	font-size: 56rpx;
+	color: #333;
+}
+.withdrawal-box-bottom-right {
+	font-size: 56rpx;
+	color: #333;
+	margin-left: .5em;
+	flex-grow: 1;
+}
+.withdrawal-notic {
+	line-height: 54rpx;
+	font-size: 24rpx;
+	color: #999;
+	margin-bottom: 85rpx;
+	margin-left: 30rpx;
+}
+.withdrawal-bottom {
+	padding: 0 60rpx;
+}

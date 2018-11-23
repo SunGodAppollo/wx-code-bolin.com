@@ -1,0 +1,29 @@
+/* pages/paystatus/paystatus.wxss */
+.paystatus {
+	margin-top: 30rpx;
+	background-color: #fff;
+	padding: 58rpx 60rpx 30rpx;
+}
+.paystatus-top {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.paystatus-img {
+	width: 50rpx;
+	height: 50rpx;
+}
+.paystatus-title {
+	color: #333;
+	font-size: 36rpx;
+	margin-left: 22rpx;
+}
+.paystatus-cont {
+	text-align: center;
+	margin: 20rpx 0 50rpx;
+	color: #333;
+	font-size: 28rpx;
+}
+.paystatus-bottom {
+	border-radius: 6rpx;
+}

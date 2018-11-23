@@ -1,0 +1,8 @@
+{
+	"navigationBarBackgroundColor": "#f5c243",
+	"navigationBarTitleText": "个人中心",
+	"navigationBarTextStyle": "white",
+	"usingComponents": {
+		"mylist": "/components/mylist/mylist"
+	}
+}

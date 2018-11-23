@@ -1,0 +1,23 @@
+.tab{padding: 10px 0px;font-size:14px; /*color:#dedede;*/ float: left; width: 16%;text-align: center; }
+.topTabSwiper{ padding: 10px 0px; zoom: 1;}
+.topTabSwiper:after{content: ""; clear: both;display: block;}
+.tabBorer{padding: 10px 0px;border-bottom: 2px solid #f5c243; color: #f5c243;}
+.swiper{background-color: #f5f5f5;width: 100%;/*padding: 100rpx;*/}
+.swiper_con{/*background-color: pink;*/ text-align: center; width: 100%; height: 100%;padding-top: 15rpx;}
+.oder-content{padding:15rpx 15rpx;}
+.oder-top{font-size: 12px;margin-bottom: 40px;}
+.oder-top-left{float: left;}
+.oder-top-right{float: right;}
+
+.oder-zhong{width: 100%;height: 200rpx;}
+.oder-zhong-left{display: block;float: left;width: 200rpx;height: 200rpx;}
+.oder-zhong-right{float: right;width: 500rpx;height: 200rpx;/*background-color: pink;*/}
+.goods-title{font-size: 13px;margin-bottom: 10px;}
+.goods-left{float: left;color: red;}
+.goods-right{float: right;}
+.allPrice{float: right;}
+
+.oder-bottom{width: 100%;height: 100rpx;border-top: 1px solid #eee;}
+.btn{margin: 5px;padding:5px 10px;box-sizing: border-box;}
+.btn-on{color: #fff;background-color: #f5c243;border: 1px solid #f5c243;}
+.btn-off{border: 1px solid #666;color: #666;}

@@ -1,0 +1,36 @@
+<!--pages/car/car.wxml-->
+<view class='car'>
+    <view class='car-fixed'>
+        <checkbox-group bindchange="checkboxChange">
+            <checkbox value='demo'></checkbox>
+        </checkbox-group>
+        <text class='car-fixed-first'>全选</text>
+        <text class='car-fixed-title'>合计金额:</text>
+        <text class='car-fixed-money'>¥ 590.00</text>
+        <button class='car-fixed-button'>结算</button>
+    </view>
+
+    <view class='car-box' wx:for="{{2}}" wx:key="{{index}}">
+        <view class='car-box-first'>
+            <checkbox value='demo'></checkbox>
+            <text class='first-title'>雅诗兰黛</text>
+        </view>
+        <view class='car-box-second' wx:for="{{2}}" wx:key="{{index}}">
+            <view class='car-main'>
+                <checkbox value='demo'></checkbox>
+                <image class='car-main-img' src='/public/img/example.jpg'></image>
+                <view class='car-main-right'>
+                    <view class='car-main-top'>
+                        <view class='car-main-title'>雅诗兰黛小棕瓶面部精华 特润修护肌透精华露</view>
+                        <view class='car-main-money'>¥ 500.00</view>
+                    </view>
+                    <view class='car-main-bottom'>
+                        <van-stepper value="{{ 1 }}" />
+                        <image class='car-main-delete' src='/public/img/delete.png'></image>
+                    </view>
+                </view>
+            </view>
+        </view>
+    </view>
+
+</view>

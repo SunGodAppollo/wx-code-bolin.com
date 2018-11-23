@@ -1,0 +1,27 @@
+<view class="top-view">
+    <image  style="width: 100%; height: 100px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+</view>
+
+<view class="title">
+  最新活动
+</view>
+
+<view class="top-view">
+    <image  style="width: 100%; height: 150px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+    <view class="text">年度扎心视频:你的朋友圈里，还有朋友吗？</view>
+</view>
+
+<view class="top-view">
+    <image  style="width: 100%; height: 150px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+    <view class="text">年度扎心视频:你的朋友圈里，还有朋友吗？</view>
+</view>
+
+<view class="top-view">
+    <image  style="width: 100%; height: 150px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+    <view class="text">年度扎心视频:你的朋友圈里，还有朋友吗？</view>
+</view>
+
+<view class="top-view">
+    <image  style="width: 100%; height: 150px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+    <view class="text">年度扎心视频:你的朋友圈里，还有朋友吗？</view>
+</view>

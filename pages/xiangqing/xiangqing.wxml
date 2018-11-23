@@ -1,0 +1,47 @@
+<!--pages/xiangqing/xiangqing.wxml-->
+<swiper indicator-dots="true"
+        autoplay="true" interval="2000" duration="1000" circular="true">
+      <block wx:for="{{imglis}}">
+        <swiper-item>
+            <image src="{{item}}" class="slide-image" width="355" height="150"/>
+        </swiper-item>
+      </block>
+</swiper>
+
+<view style="padding:10px;">
+<view style="font-size:18px;">雅诗兰黛精华小棕瓶</view>
+<view style="padding-top:20px;">
+<view style="color:red;float:left">￥590.00</view>
+<view style="color:#333;float:right">库存:10</view>
+<view class="clear"></view>
+</view>
+
+</view>
+
+
+<view class='topTabSwiper'>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>图文详情</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>累计评价</view>
+</view>
+<swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
+  <swiper-item><view class='swiper_con'>
+    <image  style=" width: 100%; background-color: #eeeeee;" src="/public/img/xiangqing.jpg"></image>
+
+  </view></swiper-item>
+
+  <swiper-item><view class='swiper_con'>
+    <block wx:for="{{pinglunlis}}">
+    <view style="padding:10px;border-bottom: 1px solid #ddd;">
+      <view style="height:50px;">
+        <view class="fl" style="width: 50px;height:50px;"><image  mode="aspectFit" style="border-radius: 25px;display:inline;width: 50px;" src="/public/img/example.jpg"></image></view>
+        <view class="fl" style="line-height:50px;">夏天的风</view>
+        <view class="fr" style="color:#333;line-height:50px;">2018-09-23</view>
+        <view class="clear"></view>
+      </view>
+
+      <view>已经用了好几瓶了，效果显著。很保湿，不油腻。以后还会一直坚持用。</view>
+    </view>
+    </block>
+  </view></swiper-item>
+
+</swiper>

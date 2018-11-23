@@ -1,0 +1,15 @@
+<view  class="top">
+<view class="top-text">
+  <view>当前积分</view>
+  <view>100</view>
+</view>
+</view>
+
+<view >
+<view class="hr pd">
+  <view class="fl">2018-10-08 16:32</view>
+  <view class="fr">+30分</view>
+  <view class="clear"></view>
+</view>
+
+</view>

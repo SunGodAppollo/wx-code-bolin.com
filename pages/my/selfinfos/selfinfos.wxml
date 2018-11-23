@@ -1,0 +1,60 @@
+<!--pages/my/selfinfos/selfinfos.wxml-->
+<view class='infos'>
+	<view class='infos-main'>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>头像</text>
+				<image class='infos-header' src='/public/img/example.jpg' mode='aspectFill'></image>
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>用户名</text>
+				<text class='infos-text'>佚名</text>
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>性别</text>
+
+				<picker mode="selector" bindchange="bindSexChange" value="{{index}}" range="{{sex}}" >
+			    <view class="picker">
+						<text class='infos-text'>{{sex[index]}}</text>
+
+			    </view>
+			  </picker>
+
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>生日</text>
+				<picker mode="date" value="{{date}}" start="1990-10-11" end="2017-09-01" bindchange="bindDateChange">
+			     <view class="picker">
+						 <text class='infos-text'>{{date}}</text>
+			     </view>
+   	 		</picker>
+
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>修改密码</text>
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+		<view class='infos-list-p'>
+			<view class='infos-list-m'>
+				<text class='infos-name'>我的收货地址</text>
+				<image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+			</view>
+		</view>
+	</view>
+	<view class='infos-bottom'>
+		<button class='infos-button'>退出账号</button>
+	</view>
+</view>

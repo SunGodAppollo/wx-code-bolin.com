@@ -1,0 +1,71 @@
+/* pages/my/my.wxss */
+.top {
+	margin-bottom: 30rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+	position: relative;
+	padding: 30rpx;
+}
+.top-bg {
+	position: absolute;
+	left: 0;
+	top: -35px;
+	width: 100vw;
+	height: 100%;
+}
+.top-main {
+	width: 100%;
+	height: 344rpx;
+	border-radius: 4rpx;
+	z-index: 1;
+	position: relative;
+}
+
+.top-main-bg {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: -1;
+}
+.top-main-box {
+	width: 100%;
+	height: 100%;
+	padding: 40rpx 40rpx 0;
+	box-sizing: border-box;
+}
+.top-main-first {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	margin-bottom: 40rpx;
+}
+.top-main-first-title {
+	width: 100rpx;
+	height: 100rpx;
+	border-radius: 50%;
+	background-color: #e5e5e5;
+	font-size: 32rpx;
+	line-height: 100rpx;
+	text-align: center;
+	margin-right: 32rpx;
+}
+.top-main-first-name {
+	flex-grow: 1;
+	font-size: 30rpx;
+	color: #333;
+}
+.top-main-first-code {
+	width: 114rpx;
+	height: 114rpx;
+	box-sizing: border-box;
+	background-color: #fff;
+}
+.top-main-second {
+	font-size: 28rpx;
+	color: #333;
+}
+.middle {
+	margin-bottom: 30rpx;
+}

@@ -1,0 +1,8 @@
+<!--components/mylist/mylist.wxml-->
+<navigator class='mylist' url='{{url}}'>
+	<view class='mylist-box'>
+		<image wx:if="{{img!==''}}" class='my-list-img' src='{{img}}' mode='aspectFit'></image>
+		<text class='my-list-name'>{{name}}</text>
+		<image class='my-list-right' src='/public/img/right.png' mode='aspectFit'></image>
+	</view>
+</navigator>

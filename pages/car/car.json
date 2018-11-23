@@ -1,0 +1,8 @@
+{
+	"navigationBarBackgroundColor": "#f5c243",
+	"navigationBarTitleText": "购物车",
+	"navigationBarTextStyle": "white",
+	"usingComponents": {
+		"van-stepper": "/miniprogram_npm/vant-weapp/stepper/index"
+	}
+}

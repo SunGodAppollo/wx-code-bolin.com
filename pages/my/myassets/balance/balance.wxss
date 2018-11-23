@@ -1,0 +1,79 @@
+/* pages/my/myassets/balance/balance.wxss */
+.balance {
+	margin-top: 30rpx;
+}
+.box-first {
+	padding: 60rpx 30rpx;
+	background-color: #fff;
+}
+.box-first-title {
+	font-size: 30rpx;
+	color: #333;
+	margin-bottom: 50rpx;
+}
+.box-first-money {
+	font-size: 56rpx;
+	color: #333;
+}
+.box-second {
+	margin-top: 30rpx;
+	background-color: #fff;
+	padding: 35rpx 30rpx;
+}
+.box-second-title {
+	font-size: 28rpx;
+	color: #333;
+	margin-bottom: 35rpx;
+}
+.box-second-box {
+	display: flex;
+	flex-direction: row;
+}
+.box-second-nav {
+	/* width: 146rpx; */
+	height: 120rpx;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border: 2rpx solid #f5c243;
+	border-radius: 6rpx;
+	position: relative;
+}
+.box-second-main {
+	margin-right: 40rpx;
+	flex-grow: 1;
+}
+.box-second-main:last-child {
+	margin-right: 0;
+}
+.box-second-one {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+}
+.box-second-two {
+	font-size: 32rpx;
+	color: #f5c243;
+	font-weight: bold;
+}
+.box-second-three {
+	font-size: 24rpx;
+	color: #f5c243;
+}
+.box-second-nav-checked {
+	background-color: #f5c243;
+}
+.box-second-nav-checked .box-second-two {
+	color: #fff;
+}
+.box-second-nav-checked .box-second-three {
+	color: #fff;
+}
+.balance-bottom {
+	padding: 75rpx 60rpx 0;
+}

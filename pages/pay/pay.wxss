@@ -1,0 +1,54 @@
+/* pages/pay/pay.wxss */
+.pay {
+	margin-top: 30rpx;
+	background-color: #fff;
+}
+.pay-box {
+	height: 111rpx;
+	padding: 0 30rpx;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 1rpx solid #e5e5e5;
+}
+.pay-box:last-child {
+	border-bottom: 1rpx solid transparent;
+}
+.pay-box-img {
+	width: 50rpx;
+	height: 50rpx;
+	margin-right: 30rpx;
+}
+.pay-box-text {
+	flex-grow: 1;
+	font-size: 28rpx;
+	color: #333;
+}
+.pay-bottom {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	width: 100%;
+	height: 98rpx;
+	background-color: #fff;
+	padding: 0 30rpx;
+	box-sizing: border-box;
+}
+.pay-bottom-title {
+	font-size: 26rpx;
+	color: #333;
+}
+.pay-bottom-money {
+	color: #e13c3c;
+	font-size: 26rpx;
+	margin-left: .5em;
+}
+.pay-bottom-button {
+	width: 240rpx;
+	height: 70rpx;
+	line-height: 70rpx;
+	margin-left: 30rpx;
+}

@@ -1,0 +1,6 @@
+<!--pages/my/myassets/mymoney/mymoney.wxml-->
+<view class='mymoney'>
+	<image class='mymoney-icon' src='/public/img/coins.png' mode='aspectFit'></image>
+	<view class='mymoney-name'>¥ 100.00</view>
+	<button class='mymoney-button'>提现</button>
+</view>

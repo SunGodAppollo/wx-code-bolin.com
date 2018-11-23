@@ -1,0 +1,26 @@
+<!--pages/refund/refund.wxml-->
+<view class='refund'>
+	<view class='refund-box'>
+		<view class='refund-box-short'>
+			<label>退款金额: </label>
+			<input class='refund-input' type='number' placeholder='请输入退款金额'></input>
+		</view>
+		<view class='refund-box-short'>
+			<label>退款原因: </label>
+			<input class='refund-input' placeholder='请输入退款原因'></input>
+		</view>
+		<view class='refund-box-long'>
+			<label>详细说明: </label>
+			<textarea auto-height="true"></textarea>
+		</view>
+	</view>
+	<view class='refund-box refund-label'>
+		<label class='refund-box-label'>上传图片:</label>
+		<view class='refund-img-box'>
+			<image class='refund-box-img' src='/public/img/add_img.png'></image>
+		</view>
+	</view>
+	<view class='refund-bottom'>
+		<button>提交</button>
+	</view>
+</view>
