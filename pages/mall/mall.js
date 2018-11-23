@@ -1,4 +1,5 @@
 // pages/mall/mall.js
+const app = getApp();
 Page({
 
   /**
@@ -6,6 +7,7 @@ Page({
    */
   data: {
     currentData:0,
+    id:'',
     goodslis:[
       {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
       {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
@@ -27,6 +29,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    this.setFenlei();
+    this.setGoodsByFid('7fd38325192a48d594e4c1b2e72d668a');
 
   },
 
@@ -104,6 +109,35 @@ Page({
          url: '/pages/xiangqing/xiangqing'
      });
   },
+  //设置分类
+  setFenlei:function(){
+    var that=this;
+    var url='/mall/getIndustryList';
+    var data={};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          fenlei:resData.data,
+          id:resData.data[0].id
+        })
+        console.log(resData.data[0].id);
 
+        //that.setGoodsByFid(resData.data[0].id);
+
+      });
+  },
+  //设置分类id的商品
+  setGoodsByFid:function(fid){
+    var that=this;
+    var url='/mall/getProduct';
+      var data={pageNumber:'1',pageSize:'10',industryId:fid};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          goodslis:resData.rows,
+        })
+
+      });
+  },
 
 })

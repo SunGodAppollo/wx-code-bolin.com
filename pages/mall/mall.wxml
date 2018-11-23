@@ -3,18 +3,16 @@
 	<include src="components/search/search.wxml" />
 </navigator>
 <view class='topTabSwiper'>
-    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>普通商品</view>
-    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>礼品卡</view>
-    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>分类一</view>
-    <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'>分类二</view>
-    <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'>分类三</view>
+	<block wx:for="{{fenlei}}" wx:key="key">
+    <view class='tab  {{currentData == index ? "tabBorer" : ""}}'  data-current = "{{index}}" bindtap='checkCurrent'>{{item.name}}</view>
+	</block>
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
-    <block wx:for="{{goodslis}}">
+    <block wx:for="{{goodslis}}" wx:key="key">
     <view class="goods-item" bindtap="showInfo">
-      <image  style="width: 100%; height: 70%; background-color: #eeeeee;" src="/public/img/good.jpg"></image>
-      <text class="goods-title">{{item.title}}</text>
+      <image  style="width: 100%; height: 70%; background-color: #eeeeee;" src="{{item.imgUrl}}"></image>
+      <text class="goods-title">{{item.name}}</text>
       <view style="padding: 15rpx;">
         <view class="goods-info-left">￥{{item.price}}</view>
         <view class="goods-info-right">库存:{{item.chun}}</view>
