@@ -94,9 +94,12 @@ Page({
     }
   },
   //显示详情
-  showInfo:function(){
-    wx.redirectTo({
-         url: '/pages/xiangqing/xiangqing'
+  showinfo:function(e){
+    //获取商品的id
+
+    var goodsid=e.currentTarget.dataset.gid;
+    wx.navigateTo({
+         url: '/pages/xiangqing/xiangqing?goodsid='+goodsid
      });
   },
   //设置分类
@@ -129,5 +132,6 @@ Page({
 
       });
   },
+  
 
 })
