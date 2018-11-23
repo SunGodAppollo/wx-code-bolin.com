@@ -1,4 +1,5 @@
 // pages/mall/mall.js
+const app = getApp();
 Page({
 
   /**
@@ -6,27 +7,17 @@ Page({
    */
   data: {
     currentData:0,
-    goodslis:[
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'},
-      {title:'雅诗兰黛精华小棕瓶',price:'590.00',chun:'10'}
-    ]
+    id:'',
+    goodslis:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    this.setFenlei();
+    //this.setGoodsByFid('7fd38325192a48d594e4c1b2e72d668a');
 
   },
 
@@ -82,8 +73,9 @@ Page({
   bindchange:function(e){
     const that  = this;
     that.setData({
-      currentData: e.detail.current
-    })
+      currentData: e.detail.current,
+    });
+
   },
   //点击切换，滑块index赋值
   checkCurrent:function(e){
@@ -94,16 +86,52 @@ Page({
     }else{
 
       that.setData({
-        currentData: e.target.dataset.current
-      })
+        currentData: e.target.dataset.current,
+        id:e.target.dataset.fid
+      });
+      //更新
+      this.setGoodsByFid(that.data.id);
     }
   },
   //显示详情
-  showInfo:function(){
-    wx.redirectTo({
-         url: '/pages/xiangqing/xiangqing'
+  showinfo:function(e){
+    //获取商品的id
+
+    var goodsid=e.currentTarget.dataset.gid;
+    wx.navigateTo({
+         url: '/pages/xiangqing/xiangqing?goodsid='+goodsid
      });
   },
+  //设置分类
+  setFenlei:function(){
+    var that=this;
+    var url='/mall/getIndustryList';
+    var data={};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          fenlei:resData.data,
+          id:resData.data[0].id
+        })
+        console.log(resData.data[0].id);
 
+        that.setGoodsByFid(resData.data[0].id);
+
+      });
+  },
+  //设置分类id的商品
+  setGoodsByFid:function(fid){
+    var that=this;
+    var url='/mall/getProduct';
+      var data={pageNumber:'1',pageSize:'10',industryId:fid};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          goodslis:resData.rows,
+        })
+
+      });
+  },
+  
 
 })

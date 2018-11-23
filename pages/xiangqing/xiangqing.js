@@ -1,4 +1,5 @@
 // pages/xiangqing/xiangqing.js
+const app = getApp();
 Page({
 
   /**
@@ -28,7 +29,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+      var that=this
+      that.setData({
+        goodsid:options.goodsid
+      })
+     console.log(options.goodsid);
+     console.log(options);
+     that.setGoods();
+     that.setPingjia();
   },
 
   /**
@@ -98,6 +106,32 @@ Page({
         currentData: e.target.dataset.current
       })
     }
+  },
+  //设置商品
+  setGoods:function(){
+    var that=this;
+    var url='/mall/getProductDetails';
+      var data={productId:that.data.goodsid};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          goods:resData.data,
+        })
+
+      });
+  },
+  //设置评价
+  setPingjia:function(){
+    var that=this;
+    var url='/mall/getCommentList';
+      var data={pageNumber:'1',pageSize:'10'};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        that.setData({
+          pingjia:resData.rows,
+        })
+
+      });
   }
 
 })
