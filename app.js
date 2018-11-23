@@ -57,6 +57,9 @@ App({
 			}
         });
     },
+    get: function() {
+        console.log("测试");
+    },
     globalData: {
         userInfo: null,
         appUrl: "http://39.104.238.35:3333"
