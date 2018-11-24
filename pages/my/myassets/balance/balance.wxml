@@ -2,28 +2,28 @@
 <view class='balance'>
     <view class='box-first'>
         <view class='box-first-title'>当前余额:</view>
-        <view class='box-first-money'>¥ 100.00</view>
+        <view class='box-first-money'>¥ {{money}}</view>
     </view>
     <view class='box-second'>
         <view class='box-second-title'>请选择充值方式:</view>
         <radio-group bindchange="bindchangeFunc">
             <view class='box-second-box'>
-                <view class='box-second-main' wx:for="{{4}}" wx:key="{{index}}">
+                <view class='box-second-main' wx:for="{{saleArr}}" wx:key="{{index}}">
                     <view class='box-second-nav box-second-nav-checked' wx:if="{{index === bindStatus}}">
                         <radio class='box-second-one' value='{{index}}'></radio>
-                        <view class='box-second-two'>100元</view>
-                        <view class='box-second-three'>送10元</view>
+                        <view class='box-second-two'>{{item.money}}元</view>
+                        <view class='box-second-three'>送{{item.donationMoney}}元</view>
                     </view>
 					<view class='box-second-nav' wx:else>
                         <radio class='box-second-one' value='{{index}}'></radio>
-                        <view class='box-second-two'>100元</view>
-                        <view class='box-second-three'>送10元</view>
+                        <view class='box-second-two'>{{item.money}}元</view>
+                        <view class='box-second-three'>送{{item.donationMoney}}元</view>
                     </view>
                 </view>
             </view>
         </radio-group>
     </view>
 	<view class='balance-bottom'>
-		<button class='balance-bottom-button'>确定</button>
+		<button class='balance-bottom-button' bindtap='submitFunc'>确定</button>
 	</view>
 </view>

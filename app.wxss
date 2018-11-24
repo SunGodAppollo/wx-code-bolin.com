@@ -72,3 +72,12 @@ button.button-hover {
 	color: #fff;
 	opacity: .8;
 }
+
+/* 没有数据显示的文字 */
+.no-data {
+	width: 100vw;
+	line-height: 60rpx;
+	text-align: center;
+	font-size: 26rpx;
+	color: #999;
+}

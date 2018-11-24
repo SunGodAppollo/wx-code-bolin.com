@@ -1,8 +1,9 @@
 <!--pages/my/mycards/mycards.wxml-->
 <view class='cards'>
-	<view class='cards-main' wx:for="{{4}}" wx:key="{{index}}">
-		<image class='main-head' src='/public/img/example.jpg' mode='aspectFill'></image>
-		<text class='main-title'>雅诗兰黛次卡</text>
-		<text class='main-right'>剩余3次</text>
+	<view class='cards-main' wx:for="{{lists}}" wx:key="{{index}}" data-id='{{item.id}}'>
+		<image class='main-head' src='{{item.logo}}' mode='aspectFill'></image>
+		<text class='main-title'>{{item.title}}</text>
+		<text class='main-right'>剩余{{item.surplusNum}}次</text>
 	</view>
 </view>
+<view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>

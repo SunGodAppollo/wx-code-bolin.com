@@ -1,8 +1,9 @@
 <!--pages/my/records/records.wxml-->
 <view class='records'>
-	<view class='records-main' wx:for="{{7}}" wx:key="{{index}}">
-		<text class='records-title'>雅诗兰黛</text>
-		<text class='records-date'>2018-10-10 16:42</text>
-		<text class='records-details'>-30</text>
+	<view class='records-main' wx:for="{{lists}}" wx:key="{{index}}">
+		<text class='records-title'>{{item.name}}</text>
+		<text class='records-date'>{{item.createTime}}</text>
+		<text class='records-details'>{{item.amount}}</text>
 	</view>
 </view>
+<view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>

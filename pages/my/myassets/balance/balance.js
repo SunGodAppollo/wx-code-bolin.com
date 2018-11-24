@@ -1,11 +1,14 @@
 // pages/my/myassets/balance/balance.js
+import { returnFloat } from '../../../../utils/common.js'
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
-		bindStatus: 4
+		bindStatus: -1,
+		money: 0,
+		saleArr: []
 	},
 
 	/**
@@ -26,7 +29,8 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.getFunc();
+		this.saleFunc();
 	},
 
 	/**
@@ -68,5 +72,49 @@ Page({
 		this.setData({
 			bindStatus: Number(e.detail.value)
 		});
+	},
+
+	//获取用户余额
+	getFunc() {
+		var self = this;
+		getApp().post('/appUser/getCapitalInfo', {
+			userId: wx.getStorageSync('user').id
+		}, function (r) {
+			if (r.code === 0) {
+				self.setData({
+					money: returnFloat(r.data.totalAmount)
+				})
+			}
+		})
+	},
+
+	//获取充多少送多少
+	saleFunc: function() {
+		var self = this;
+		getApp().post('/appUser/getConfigure', {
+
+		},function(r) {
+			if(r.code === 0) {
+				self.setData({
+					saleArr: r.data
+				})
+			}
+		})
+	},
+
+	//点击确认按钮进行充值
+	submitFunc: function() {
+		var self = this;
+		var status = self.data.bindStatus;
+		if (status<0) {
+			wx.showToast({
+				title: "请选择充值金额",
+				icon: 'none',
+				duration: 2000
+			})
+		}else{
+			var id = self.data.saleArr[status].id;
+			console.log(id);
+		}
 	}
 })

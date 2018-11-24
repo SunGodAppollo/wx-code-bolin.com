@@ -10,7 +10,8 @@ Page({
             id: "",
             name: "",
             sex: "",
-            birthday: ""
+            birthday: "",
+			date: ""
         },
         //修改名称弹窗控件
         nameShow: false,
@@ -97,6 +98,7 @@ Page({
             userId: wx.getStorageSync('user').id
         }, function(r) {
             if (r.code === 0) {
+				r.data.date = r.data.birthday;
 				r.data.birthday = self.fmtDate(r.data.birthday);
                 self.setData({
                     infos: r.data
@@ -326,7 +328,7 @@ Page({
 		var self = this;
 		getApp().post('/appUser/updateUserInfo', {
 			id: wx.getStorageSync('user').id,
-			birthday: new Date(self.data.userDate).getTime()
+			birthday: self.data.userDate
 		}, function (r) {
 			if (r.code === 0) {
 				self.setData({
@@ -342,11 +344,19 @@ Page({
 		})
     },
 
+	//时间戳转换
 	fmtDate(obj){
 		var date = new Date(obj);
 		var y = 1900 + date.getYear();
 		var m = "0" + (date.getMonth() + 1);
 		var d = "0" + date.getDate();
 		return y + "-" + m.substring(m.length - 2, m.length) + "-" + d.substring(d.length - 2, d.length);
+	},
+
+	//跳转到修改密码页面
+	goChangePassword: function() {
+		wx.navigateTo({
+			url: '/pages/changepassword/changepassword'
+		})
 	}
 })

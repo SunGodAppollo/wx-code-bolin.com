@@ -5,7 +5,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		lists: []
 	},
 
 	/**
@@ -26,7 +26,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.getFunc();
 	},
 
 	/**
@@ -47,7 +47,7 @@ Page({
 	 * 页面相关事件处理函数--监听用户下拉动作
 	 */
 	onPullDownRefresh: function () {
-
+		this.getFunc();
 	},
 
 	/**
@@ -62,5 +62,19 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//获取消费记录
+	getFunc: function() {
+		var self = this;
+		getApp().post('/appUser/getConsumptionDetail',{
+			userId: wx.getStorageSync('user').id
+		},function(r) {
+			if(r.code === 0) {
+				self.setData({
+					lists: r.data
+				})
+			}
+		})
 	}
 })
