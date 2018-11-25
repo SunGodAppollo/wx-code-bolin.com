@@ -230,6 +230,14 @@ Page({
         })
     },
 
+	//跳转到修改名称页面
+	goNameFunc: function() {
+		var self = this;
+		wx.navigateTo({
+			url: '/pages/username/username?name='+self.data.infos.name
+		})
+	},
+
     //修改名称input
     onNameChange: function(event) {
         this.setData({

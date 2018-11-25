@@ -65,5 +65,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+
+  //跳转到查询礼品卡余额界面
+  queryFunc: function() {
+	  wx.navigateTo({
+		  url: '/pages/giftbalance/giftbalance?password=abcdefghijk'
+	  })
   }
 })

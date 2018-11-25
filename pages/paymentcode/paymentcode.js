@@ -5,7 +5,14 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		infos: {
+			backgroundPicUrl: "",
+			cardCore: "",
+			logoUrl: "",
+			oneCode: "",
+			qrCode: "",
+			title: ""
+		}
 	},
 
 	/**
@@ -26,7 +33,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.getFunc();
 	},
 
 	/**
@@ -62,5 +69,19 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//获取会员卡信息
+	getFunc: function () {
+		var self = this;
+		getApp().post("/appUser/getCardInfo", {
+			userId: wx.getStorageSync("user").id
+		}, function (r) {
+			if (r.code === 0) {
+				self.setData({
+					infos: r.data
+				})
+			}
+		});
 	}
 })

@@ -6,6 +6,6 @@
 
 
 <view class="foot">
-<view class="foot-left">查询余额</view>
+<view class="foot-left" bindtap='queryFunc'>查询余额</view>
 <view class="foot-right">绑定</view>
 </view>

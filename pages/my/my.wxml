@@ -2,7 +2,7 @@
 <view class='container'>
 	<view class='top'>
 		<image class='top-bg' src='/public/img/my_top.png'></image>
-		<view class='top-main'>
+		<view class='top-main' bindtap='goPayCodeFunc'>
 			<image wx:if="{{infos.backgroundPicUrl === ''}}" class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
 			<image wx:else class='top-main-bg' src='{{infos.backgroundPicUrl}}' mode='aspectFill'></image>
 			<view class='top-main-box'>

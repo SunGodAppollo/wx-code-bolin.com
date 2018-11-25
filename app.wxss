@@ -51,18 +51,18 @@ checkbox .wx-checkbox-input.wx-checkbox-input-checked,radio .wx-radio-input.wx-r
    background: #f5c243 !important;
 }
 /* 选中后的 对勾样式 （白色对勾 可根据UI需求自己修改） */
-/* checkbox .wx-checkbox-input.wx-checkbox-input-checked::before,radio .wx-radio-input.wx-radio-input-checked::before{
-   border-radius: 50%;
+checkbox .wx-checkbox-input.wx-checkbox-input-checked::before,radio .wx-radio-input.wx-radio-input-checked::before{
+   /* border-radius: 50%;
    width: 40rpx;
    height: 40rpx;
    line-height: 40rpx;
    text-align: center;
-   font-size:30rpx;
+   font-size:30rpx; */
    color:#fff;
-   background: transparent;
+   /* background: transparent;
    transform:translate(-50%, -50%) scale(1);
-   -webkit-transform:translate(-50%, -50%) scale(1);
-} */
+   -webkit-transform:translate(-50%, -50%) scale(1); */
+}
 
 button {
 	background-color: #f5c243;

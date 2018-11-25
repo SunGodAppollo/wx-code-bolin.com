@@ -5,7 +5,7 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		money: ""
 	},
 
 	/**
@@ -62,5 +62,19 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//改变data.money
+	changeMoneyFunc: function (event) {
+		this.setData({
+			money: event.detail.value
+		})
+	},
+
+	//提现
+	submitFunc: function() {
+		var self = this;
+		var money = self.data.money;
+		console.log(money);
 	}
 })

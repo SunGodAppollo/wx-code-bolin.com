@@ -16,7 +16,7 @@
 		<rich-text nodes="{{nodes}}"></rich-text>
 	</view>
 	<view class='detail-bottom'>
-		<view class='detail-left'>
+		<view class='detail-left' bindtap='goChatFunc'>
 			<image class='detail-left-img' src='/public/img/chat.png'></image>
 			<text class='detail-left-chat'>客服</text>
 		</view>

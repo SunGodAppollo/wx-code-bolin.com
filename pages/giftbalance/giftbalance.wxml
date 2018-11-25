@@ -1,5 +1,5 @@
 <!--pages/giftbalance/giftbalance.wxml-->
 <view class='balance'>
 	<view class='balance-title'>当前礼品卡余额:</view>
-	<view class='balance-money'>¥ 100.00</view>
+	<view class='balance-money'>¥ {{money}}</view>
 </view>

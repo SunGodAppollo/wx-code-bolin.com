@@ -1,6 +1,6 @@
 <!--pages/paymentcode/paymentcode.wxml-->
 <view class='payment'>
-	<image class='payment-title' src='/public/img/example.jpg' mode='aspectFill'></image>
-	<image class='payment-code' src='/public/img/example.jpg' mode='aspectFit'></image>
+	<image class='payment-title' src='{{infos.logoUrl}}' mode='aspectFill'></image>
+	<image class='payment-code' src='{{infos.oneCode}}' mode='aspectFit'></image>
 	<text class='payment-text'>点击可查看付款码数字</text>
 </view>

@@ -5,14 +5,16 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		name: ""
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.setData({
+			name: options.name
+		})
 	},
 
 	/**
@@ -62,5 +64,42 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//改变data.name
+	changeNameFunc: function (event) {
+		this.setData({
+			name: event.detail.value
+		})
+	},
+
+	//完成
+	submitFunc: function() {
+		var self = this;
+		if(self.data.name === '') {
+			wx.showToast({
+				title: '用户名为空',
+				icon: 'none',
+				duration: 2000
+			})
+		}else{
+			getApp().post('/appUser/updateUserInfo', {
+				id: wx.getStorageSync('user').id,
+				name: self.data.name
+			}, function (r) {
+				if (r.code === 0) {
+					wx.showToast({
+						title: r.message,
+						icon: 'success',
+						duration: 2000
+					})
+					setTimeout(function(){
+						wx.navigateBack({
+							delta: 1
+						})
+					},2000)
+				}
+			})
+		}
 	}
 })

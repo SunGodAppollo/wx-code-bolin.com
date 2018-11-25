@@ -46,7 +46,22 @@
 	width: 120rpx;
 	height: 120rpx;
 	margin-right: 30rpx;
+	flex-shrink: 0;
 }
 .refund-img-box {
 	display: flex;
+}
+.refund-box-load {
+	position: relative;
+}
+.close-icon {
+	width: 30rpx;
+	height: 30rpx;
+	position: absolute;
+	right: 15rpx;
+	top: -15rpx;
+	z-index: 1;
+}
+.close-icon:active {
+	opacity: .8;
 }

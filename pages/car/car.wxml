@@ -1,36 +1,42 @@
 <!--pages/car/car.wxml-->
-<view class='car'>
+<scroll-view class='car' scroll-y="true" bindscrolltolower="bindscrolltoupperFunc">
     <view class='car-fixed'>
-        <checkbox-group bindchange="checkboxChange">
-            <checkbox value='demo'></checkbox>
+        <checkbox-group bindchange="checkboxAllChange">
+            <checkbox value='all' checked='{{allIsChecked}}'></checkbox>
         </checkbox-group>
         <text class='car-fixed-first'>全选</text>
         <text class='car-fixed-title'>合计金额:</text>
-        <text class='car-fixed-money'>¥ 590.00</text>
-        <button class='car-fixed-button'>结算</button>
+        <text class='car-fixed-money'>¥ {{allPrice}}</text>
+        <button class='car-fixed-button' bindtap='submitFunc'>结算</button>
     </view>
 
-    <view class='car-box' wx:for="{{2}}" wx:key="{{index}}">
+    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}">
         <view class='car-box-first'>
-            <checkbox value='demo'></checkbox>
-            <text class='first-title'>雅诗兰黛</text>
+            <!-- <checkbox-group bindchange="checkboxShopChange"> -->
+            <!-- <checkbox wx:if="{{item.isCheck}}" data-index='{{index}}' data-is='0' checked='{{item.isCheck}}' bindtap='checkboxShopChange'></checkbox> -->
+            <!-- <checkbox wx:else data-index='{{index}}' data-is='1' checked='{{item.isCheck}}' bindtap='checkboxShopChange'></checkbox> -->
+            <!-- </checkbox-group> -->
+            <image class='check-img' wx:if="{{item.isCheck}}" data-index='{{index}}' data-is='0' src='/public/img/choice.png' bindtap='checkboxShopChange'></image>
+            <image class='check-img' wx:else data-index='{{index}}' data-is='1' src='/public/img/choice_no.png' bindtap='checkboxShopChange'></image>
+            <text class='first-title'>{{item.shopName}}</text>
         </view>
-        <view class='car-box-second' wx:for="{{2}}" wx:key="{{index}}">
+        <view class='car-box-second' wx:for="{{item.product}}" wx:for-item="son" wx:key="{{index}}">
             <view class='car-main'>
-                <checkbox value='demo'></checkbox>
-                <image class='car-main-img' src='/public/img/example.jpg'></image>
+                <image class='check-img' wx:if="{{son.isChecked}}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='0' src='/public/img/choice.png' bindtap='checkboxChange'></image>
+                <image class='check-img' wx:else data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='1' src='/public/img/choice_no.png' bindtap='checkboxChange'></image>
+                <image class='car-main-img' src='{{son.imgUrl}}' mode='aspectFill'></image>
                 <view class='car-main-right'>
                     <view class='car-main-top'>
                         <view class='car-main-title'>雅诗兰黛小棕瓶面部精华 特润修护肌透精华露</view>
-                        <view class='car-main-money'>¥ 500.00</view>
+                        <view class='car-main-money'>¥ {{son.price}}</view>
                     </view>
                     <view class='car-main-bottom'>
-                        <van-stepper value="{{ 1 }}" />
-                        <image class='car-main-delete' src='/public/img/delete.png'></image>
+                        <van-stepper value="{{ son.number }}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-id="{{ son.cartId }}" bind:change="onButtonChange" />
+                        <image class='car-main-delete' data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-id="{{ son.cartId }}" src='/public/img/delete.png' bindtap='deleteFunc'></image>
                     </view>
                 </view>
             </view>
         </view>
     </view>
 
-</view>
+</scroll-view>

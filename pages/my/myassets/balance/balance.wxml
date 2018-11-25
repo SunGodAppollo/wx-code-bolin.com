@@ -24,6 +24,6 @@
         </radio-group>
     </view>
 	<view class='balance-bottom'>
-		<button class='balance-bottom-button' bindtap='submitFunc'>确定</button>
+		<button class='balance-bottom-button' bindtap='submitFunc'>充值</button>
 	</view>
 </view>

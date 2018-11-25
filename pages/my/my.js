@@ -19,7 +19,6 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        console.log("监听页面加载");
         getApp().isLogin();
     },
 
@@ -27,7 +26,6 @@ Page({
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-        console.log("监听页面初次渲染完成");
 		this.getInfosFunc();
     },
 
@@ -35,7 +33,6 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-        console.log("监听页面显示");
     },
 
     /**
@@ -85,5 +82,12 @@ Page({
 				})
 			}
         });
-    }
+    },
+
+	//跳转到付款码页面
+	goPayCodeFunc: function() {
+		wx.navigateTo({
+			url: '/pages/paymentcode/paymentcode',
+		})
+	}
 })

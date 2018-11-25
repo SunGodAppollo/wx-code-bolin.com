@@ -4,24 +4,24 @@
         <text class='pay-bottom-title'>合计金额: </text>
         <text class='pay-bottom-money'>¥ 590.00</text>
         <view>
-			<button class='pay-bottom-button'>支付</button>
+			<button class='pay-bottom-button' bindtap='submitFunc'>支付</button>
 		</view>
     </view>
-    <radio-group>
+    <radio-group bindchange="radioChange">
         <view class='pay-box'>
             <image class='pay-box-img' src='/public/img/balancepay.png'></image>
             <text class='pay-box-text'>余额支付</text>
-            <radio color='#f5c243'></radio>
+            <radio color='#f5c243' value='1'></radio>
         </view>
         <view class='pay-box'>
             <image class='pay-box-img' src='/public/img/wechat.png'></image>
             <text class='pay-box-text'>微信支付</text>
-            <radio color='#f5c243'></radio>
+            <radio color='#f5c243' value='3'></radio>
         </view>
         <view class='pay-box'>
             <image class='pay-box-img' src='/public/img/linqianpay.png'></image>
             <text class='pay-box-text'>零钱支付</text>
-            <radio color='#f5c243'></radio>
+            <radio color='#f5c243' value='2'></radio>
         </view>
     </radio-group>
 </view>

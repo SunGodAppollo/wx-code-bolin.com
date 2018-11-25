@@ -5,14 +5,17 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		password: "",
+		money: 0
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.setData({
+			password: options.password
+		})
 	},
 
 	/**
@@ -26,7 +29,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.getFunc();
 	},
 
 	/**
@@ -62,5 +65,19 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//获取该礼品卡余额
+	getFunc: function() {
+		var self = this;
+		getApp().post('/appUser/queryBalance',{
+			number: self.data.password
+		},function(r) {
+			if(r.code === 0) {
+				self.setData({
+					money: r.data.denomination
+				})
+			}
+		})
 	}
 })

@@ -62,5 +62,12 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//跳转到客服页面
+	goChatFunc: function() {
+		wx.navigateTo({
+			url: '/pages/chat/chat',
+		})
 	}
 })

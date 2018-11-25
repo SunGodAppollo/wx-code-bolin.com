@@ -111,3 +111,9 @@
 .car-fixed button.button-hover {
   opacity: .8;
 }
+.check-img {
+	width: 42rpx;
+	height: 42rpx;
+	margin-left: -4rpx;
+	flex-shrink: 0;
+}

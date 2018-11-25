@@ -77,5 +77,12 @@ Page({
                 })
             }
         })
-    }
+    },
+
+	//跳转到提现页面
+	goWithdrawalFunc: function() {
+		wx.navigateTo({
+			url: '/pages/withdrawal/withdrawal',
+		})
+	}
 })

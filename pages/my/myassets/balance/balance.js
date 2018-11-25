@@ -114,7 +114,15 @@ Page({
 			})
 		}else{
 			var id = self.data.saleArr[status].id;
-			console.log(id);
+			getApp().post('/appUser/addRecharge',{
+				id: id,
+				userId: wx.getStorageSync('user').id,
+				openId: ""    //暂时还没有获取到openId
+			},function(r) {
+				if(r.code === 0) {
+					
+				}
+			})
 		}
 	}
 })
