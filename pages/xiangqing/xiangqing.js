@@ -7,6 +7,8 @@ Page({
    */
   data: {
     currentData:0,
+    goodsid:0,
+    userid:0,
     imglis:[
       '/public/img/img1.jpg',
       '/public/img/img2.jpg',
@@ -30,8 +32,12 @@ Page({
    */
   onLoad: function (options) {
       var that=this
+
+
+
       that.setData({
-        goodsid:options.goodsid
+        goodsid:options.goodsid,
+        userid:wx.getStorageSync("user").id,
       })
      console.log(options.goodsid);
      console.log(options);
@@ -131,6 +137,23 @@ Page({
           pingjia:resData.rows,
         })
 
+      });
+  },
+  //添加购物车
+  addcar:function(){
+    var that=this;
+    var url='/mall/addShoppingCart';
+      var data={userId:that.data.userid,
+                productId:that.data.goodsid,
+                number:'1'};
+      app.post(url,data,function(resData){
+        console.log(resData);
+        wx.showToast({
+             title: resData.message,
+             icon: 'succes',
+             duration: 1000,
+             mask:true
+         })
       });
   }
 

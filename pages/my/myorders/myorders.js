@@ -1,10 +1,14 @@
 // pages/my/myorders/myorders.js
+const app = getApp();
 Page({
 
 	/**
 	 * 页面的初始数据
 	 */
 	data: {
+		currentData:0,
+		state:0,
+		userid:0,
 		oderlist:[
 		{num:'1'},
 		{num:'1'},
@@ -24,7 +28,12 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
+		var that=this;
 
+		that.setData({
+			userid:wx.getStorageSync("user").id,
+		});
+		that.getorederlist();
 	},
 
 	/**
@@ -100,6 +109,22 @@ orderxiangqing:function(){
 	wx.redirectTo({
 		 url: '/pages/my/myorders/myorderxiangqing/myorderxiangqing'
  });
+},
+
+//获取订单列表
+getorederlist:function(){
+	var that=this;
+	var userid=that.data.userid;
+	var state=that.data.state;
+	var url='/order/getList';
+		var data={pageNumber:'1',pageSize:'10',userId:userid,state:state};
+		app.post(url,data,function(resData){
+			console.log(resData);
+			that.setData({
+				goodslis:resData,
+			})
+
+		});
 }
 
 })

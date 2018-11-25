@@ -8,7 +8,7 @@
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
-    <block wx:for="{{oderlist}}">
+    <block wx:for="{{oderlist}}" wx:key="key">
   <view class="oder-content">
   <view class="oder-top">
     <view class="oder-top-left">订单号：123456789</view>

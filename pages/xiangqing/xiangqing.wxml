@@ -1,3 +1,15 @@
+<view class="bottom">
+<view class="fl bottom-1">
+  <view>
+  <image mode="aspectFit" src="/public/img/chat.png" style="width: 15px;height: 15px;"/>
+  </view>
+  <view style="color:#666;font-size:14px;">
+  客服
+  </view>
+</view>
+<view class="fl bottom-2"><button bindtap="addcar" size="mini">加入购物车</button></view>
+<view class="fl bottom-3"><button size="mini" style="background-color:red;">立即购买</button></view>
+</view>
 <!--pages/xiangqing/xiangqing.wxml-->
 <swiper indicator-dots="true"
         autoplay="true" interval="2000" duration="1000" circular="true">
