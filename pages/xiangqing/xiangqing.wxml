@@ -1,5 +1,5 @@
 <view class="bottom">
-<view class="fl bottom-1">
+<view class="fl bottom-1" bindtap='goChatFunc'>
   <view>
   <image mode="aspectFit" src="/public/img/chat.png" style="width: 15px;height: 15px;"/>
   </view>

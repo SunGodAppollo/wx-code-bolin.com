@@ -149,7 +149,14 @@ Page({
     wx.navigateTo({
       url: '/pages/my/myorders/querenorder/querenorder?shopid='+that.data.goods.shopId+"&goodsid="+that.data.goods.id
     })
-  }
+  },
+
+  //跳转到客服聊天窗口
+	goChatFunc: function() {
+		wx.navigateTo({
+			url: '/pages/chat/chat',
+		})
+	}
 
 
 })

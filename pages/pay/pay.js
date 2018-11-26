@@ -7,7 +7,8 @@ Page({
     data: {
         radioValue: 0,
 		payid: "",
-		allMoney: 0
+		payNum: "",
+		payAmount: 0
     },
 
     /**
@@ -15,7 +16,9 @@ Page({
      */
     onLoad: function(options) {
 		this.setData({
-			payid: options.payid
+			payid: options.payid,
+			payNum: options.payNum,
+			payAmount: options.payAmount
 		})
     },
 
@@ -99,8 +102,8 @@ Page({
 				type: status
             }, function(r) {
                 if (r.code === 0) {
-                    wx.navigateTo({
-						url: '/pages/paystatus/paystatus',
+                    wx.redirectTo({
+						url: '/pages/paystatus/paystatus?money=' + self.data.payAmount + '&num=' + self.data.payNum,
 					})
                 }
             })

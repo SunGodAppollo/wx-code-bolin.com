@@ -5,14 +5,19 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-
+		money: 0,
+		num: ""
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		var self = this;
+		self.setData({
+			money: options.money,
+			num: options.num
+		})
 	},
 
 	/**
@@ -62,5 +67,12 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//查看订单
+	goOrderFunc: function() {
+		wx.redirectTo({
+			url: '/pages/my/myorders/myorderxiangqing/myorderxiangqing',
+		})
 	}
 })

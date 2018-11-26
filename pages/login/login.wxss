@@ -51,6 +51,7 @@
 .login-box-button {
 	color: #999;
 	font-size: 26rpx;
+	white-space: nowrap;
 }
 .login-box-button:active {
 	opacity: .8;

@@ -4,8 +4,8 @@
 		<image class='paystatus-img' src='/public/img/success.png' mode='aspectFit'></image>
 		<text class='paystatus-title'>支付成功</text>
 	</view>
-	<view class='paystatus-cont'>实付 ¥480.00</view>
+	<view class='paystatus-cont'>实付 ¥{{money}}</view>
 	<view>
-		<button class='paystatus-bottom'>查看订单</button>
+		<button class='paystatus-bottom' bindtap='goOrderFunc'>查看订单</button>
 	</view>
 </view>
