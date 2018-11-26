@@ -1,1 +1,4 @@
 /* pages/my/myassets/giftcard/giftcarddetails/giftcarddetails.wxss */
+.giftdetails {
+	padding: 30rpx;
+}

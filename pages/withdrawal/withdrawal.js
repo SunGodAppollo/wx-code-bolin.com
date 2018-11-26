@@ -75,6 +75,30 @@ Page({
 	submitFunc: function() {
 		var self = this;
 		var money = self.data.money;
-		console.log(money);
+		if (money === '') {
+			wx.showToast({
+				title: "请输入提现金额",
+				icon: 'none',
+				duration: 2000
+			})
+			return;
+		}
+		getApp().post('/appUser/withdrawCash',{
+			userId: wx.getStorageSync('user').id,
+			money: money
+		},function(r) {
+			if(r.code === 0) {
+				wx.showToast({
+					title: "操作成功",
+					icon: 'success',
+					duration: 2000
+				})
+				setTimeout(function(r){
+					wx.navigateBack({
+						delta: 1
+					})
+				},2000)
+			}
+		})
 	}
 })

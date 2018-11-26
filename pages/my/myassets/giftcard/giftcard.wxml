@@ -5,7 +5,8 @@
 		<view class='gift-bottom-right' bindtap="bangdingnewcard">绑定新卡</view>
 
 	</view>
-	<view class='top' wx:for="{{lists}}" wx:key="{{index}}" bindtap='toDetailsFunc'>
+	<!-- <view class='top' wx:for="{{lists}}" wx:key="{{index}}" bindtap='toDetailsFunc'> -->
+	<view class='top' wx:for="{{lists}}" wx:key="{{index}}">
 		<view class='top-main'>
 			<image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
 			<view class='top-main-box'>

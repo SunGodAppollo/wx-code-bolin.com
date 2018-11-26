@@ -5,14 +5,17 @@ Page({
 	 * 页面的初始数据
 	 */
 	data: {
-		nodes: '<div class="div_class" style="line-height: 60px; color: red;">Hello&nbsp;World!</div>'
+		nodes: '',
+		id: ''
 	},
 
 	/**
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		this.setData({
+			id: options.id
+		})
 	},
 
 	/**
@@ -26,7 +29,7 @@ Page({
 	 * 生命周期函数--监听页面显示
 	 */
 	onShow: function () {
-
+		this.getFunc();
 	},
 
 	/**
@@ -62,5 +65,19 @@ Page({
 	 */
 	onShareAppMessage: function () {
 
+	},
+
+	//获取数据
+	getFunc: function() {
+		var self = this;
+		getApp().post('/appUser/getActivityInfo',{
+			id: self.data.id
+		},function(r) {
+			if(r.code === 0) {
+				self.setData({
+					nodes: r.data
+				})
+			}
+		})
 	}
 })
