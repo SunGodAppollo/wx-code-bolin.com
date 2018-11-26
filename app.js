@@ -85,7 +85,9 @@ App({
 	},
 	globalData: {
 		userInfo: null,
-		appUrl: "http://39.104.238.35:3333",
-		routerName: ""
+		appUrl: "https://p-in.cn",
+		routerName: "",
+		carIds: "",
+		info: []
 	}
 })

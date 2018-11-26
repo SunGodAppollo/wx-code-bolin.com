@@ -74,8 +74,12 @@ Page({
 			id: self.data.id
 		},function(r) {
 			if(r.code === 0) {
+				// r.data.content = r.data.content.replace(/\<img/gi, '<img style="width:100% !important;height:auto" ');
 				self.setData({
-					nodes: r.data
+					nodes: r.data.content
+				})
+				wx.setNavigationBarTitle({
+					title: r.data.describes,
 				})
 			}
 		})

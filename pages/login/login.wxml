@@ -27,5 +27,5 @@
 	</block>
 	<button class='login-button' wx:if="{{status}}"bindtap="userLoginFunc">登录</button>
 	<button class='login-button' wx:if="{{!status}}" bindtap='quickLoginFunc'>登录</button>
-	<button class='login-register'>注册</button>
+	<button class='login-register' bindtap="goRegisterFunc">注册</button>
 </view>

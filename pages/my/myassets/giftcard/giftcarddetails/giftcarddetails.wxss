@@ -1,4 +1,12 @@
 /* pages/my/myassets/giftcard/giftcarddetails/giftcarddetails.wxss */
 .giftdetails {
-	padding: 30rpx;
+	padding: 30rpx 0;
+	font-size: 26rpx;
+	color: #666;
+}
+img {
+	width: 100% !important;
+}
+rich-text {
+	width: 100%;
 }

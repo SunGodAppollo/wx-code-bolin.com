@@ -2,7 +2,7 @@
 <view class='pay'>
     <view class='pay-bottom'>
         <text class='pay-bottom-title'>合计金额: </text>
-        <text class='pay-bottom-money'>¥ 590.00</text>
+        <text class='pay-bottom-money'>¥ {{allMoney}}</text>
         <view>
 			<button class='pay-bottom-button' bindtap='submitFunc'>支付</button>
 		</view>

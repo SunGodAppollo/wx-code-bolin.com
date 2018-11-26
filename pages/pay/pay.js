@@ -6,7 +6,8 @@ Page({
      */
     data: {
         radioValue: 0,
-		payid: ""
+		payid: "",
+		allMoney: 0
     },
 
     /**
@@ -85,7 +86,7 @@ Page({
                 icon: 'none',
                 duration: 2000
             })
-		} else if (status === 3) {
+		} else if (status == 3) {
             wx.showToast({
                 title: "暂未开通微信支付功能",
                 icon: 'none',

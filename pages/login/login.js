@@ -190,5 +190,12 @@ Page({
 				},2000);
 			}
 		})
+	},
+
+	//跳转到注册界面
+	goRegisterFunc: function() {
+		wx.navigateTo({
+			url: '/pages/register/register',
+		})
 	}
 })

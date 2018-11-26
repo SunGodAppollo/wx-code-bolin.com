@@ -252,19 +252,23 @@ Page({
 						cartIds: String(cartId)
 					},function(r) {
 						if(r.code === 0) {
-							//需更改
 							// self.getListFunc();
 							arr[index].product[num].listShow = false;
-							let is = false;
+							arr[index].product[num].isCheck = false;
+							var is = false;
 							for(let i=0;i<arr[index].product.length;i++) {
-								if (arr[index].product[num].listShow) {
+								if (arr[index].product[i].listShow) {
 									is = true;
-									return;
 								}
 							}
 							if (!is) {
 								arr[index].shopShow = false;
 							}
+							wx.showToast({
+								title: "删除成功",
+								icon: 'success',
+								duration: 2000
+							})
 							self.setData({
 								lists: arr
 							})
@@ -332,30 +336,48 @@ Page({
 	//结算
 	submitFunc: function() {
 		var self = this;
+		if (self.data.allPrice == 0) {
+			wx.showToast({
+				title: "您还没有选择商品",
+				icon: 'none',
+				duration: 2000
+			})
+			return;
+		}
 		var carIds = "";
 		var info = [];
 		var arr = self.data.lists;
 		for (let i = 0; i < arr.length;i++) {
+			var have = true;
 			for (let n = 0; n < arr[i].product.length;n++) {
 				var long = arr[i].product[n];
 				if (long.isChecked) {
 					carIds += ","+long.cartId;
 					carIds = carIds.substring(1);
-					if(i == 0) {
+					if (have) {
 						info.push({ 'shopId': arr[i].shopId, 'infos': [{ 'productId': long.productId, 'num': String(long.number)}]});
+						have = false;
 					}else{
-						info.infos.push({ 'productId': long.productId, 'num': String(long.number) });
+						info[i].infos.push({ 'productId': long.productId, 'num': String(long.number) });
 					}
 				}
 			}
 		}
-		console.log(info);
-		getApp().post('/order/confirmOrder', {
-			userId: wx.getStorageSync('user').id,
-			carIds: carIds,
-			info: JSON.stringify(info)
-		},function(r) {
-			console.log(r);
+		getApp().globalData.carIds = carIds;
+		getApp().globalData.info = JSON.stringify(info);
+		//需要修改
+		// getApp().post('/order/confirmOrder', {
+		// 	userId: wx.getStorageSync('user').id,
+		// 	carIds: carIds,
+		// 	info: JSON.stringify(info)
+		// },function(r) {
+		// 	wx.navigateTo({
+		// 		url: '?data=' + JSON.stringify(r.data)
+		// 	})
+		// })
+		//需要修改
+		wx.navigateTo({
+			url: '/pages/my/myorders/querenorder/querenorder?caris=true',
 		})
 	}
 })

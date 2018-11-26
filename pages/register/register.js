@@ -202,18 +202,26 @@ Page({
 	//注册并返回
 	registerFunc: function() {
 		var self = this;
+		if (self.data.tel === '' || self.data.password === '' || self.data.code === '') {
+			wx.showToast({
+				title: '请填写完整注册信息',
+				icon: 'none',
+				duration: 2000
+			})
+			return;
+		}
 		getApp().post('/appUser/registerXcx',{
 			userName: self.data.tel,
 			passWord: self.data.password,
-			verifyCode: self.data.code,
-		},function(r) {
+			verifyCode: self.data.code
+		},function(r){
 			if(r.code === 0) {
 				wx.showToast({
 					title: r.message,
 					icon: 'success',
 					duration: 2000
 				})
-				setTimeout(function(){
+				setTimeout(function() {
 					wx.navigateBack({
 						delta: 1
 					})
