@@ -7,6 +7,7 @@ Page({
 	 */
 	data: {
 		currentData:0,
+		state:0,
 	},
 
 	/**
@@ -95,7 +96,7 @@ Page({
 			var data={pageNumber:'1',
 			pageSize:'10',
 			userId:that.data.userid,
-			state:'2',
+			state:that.data.state,
 		};
 			app.post(url,data,function(resData){
 				console.log(resData);
