@@ -1,6 +1,6 @@
 <view class="pd bottom" style="width:100%;background-color:#fff" >
   <view class="fl">合计金额:<text style="color:red">￥{{alldata.totalOrderAmount}}</text></view>
-  <view class="fr bootom-btn"><button size="mini" bindtap="" class="saveBtn btn btn-m btn-def"  style="color:#fff">提交订单</button></view>
+  <view class="fr bootom-btn"><button bindtap="tijiao" size="mini"  class="saveBtn btn btn-m btn-def"  style="color:#fff">提交订单</button></view>
   <view class="clear"></view>
 </view>
 <view >
@@ -13,6 +13,7 @@
   <view>详细地址:{{address.provincialCity}}</view>
   </view>
   <block wx:for="{{suc}}">
+  <view style="background-color:#fff"><image style="display:block;" mode="aspectFit" src="/public/img/mall.png"  style="height:20px;width:20px;"/>{{item.shopName}}</view>
   <block wx:for="{{item.infos}}"  wx:for-item="goods">
   <view class="pd xing" style="background-color:#fff">
   <view class="fl left">

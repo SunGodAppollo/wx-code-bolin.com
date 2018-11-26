@@ -88,6 +88,44 @@ Page({
           suc:resData.data.suc,
         });
       });
-  }
+  },
+  //提交订单
+  tijiao:function(){
+    var that=this;
+    var suc=that.data.suc;
+    var addressid=that.data.address.addrId;
+    var allinfo=[];
+    suc.forEach(function(value,index,array){
+      var myinfos=[];
+      value.infos.forEach(function(v,index,array){
+         var info={
+           productId:v.productId,
+           num:v.num,
+           secondId:'0'
+         }
+         myinfos.push(info);
+      });
+
+      var myshop={
+        shopId:value.shopId,
+        addrId:addressid,
+        couponId:'0',
+        infos:myinfos,
+      };
+      allinfo.push(myshop);
+    });
+    //数组转json
+    var info=JSON.stringify(allinfo);
+    console.log(info);
+
+
+     //var info="[{'shopId': '店铺id','addrId':'收获地址id ','couponId':'优惠卷id','infos': [{'productId': '商品id','num': '购买数量','secondId':'次卡id'}]}]";
+     var url='/order/createOrder';
+       var data={userId:that.data.userid,info:info};
+       app.post(url,data,function(resData){
+         console.log(resData);
+
+       });
+  },
 
 })
