@@ -29,7 +29,9 @@
     "pages/my/records/records",
     "pages/my/integral/integral",
     "pages/my/myorders/myorders",
-    "pages/my/myorders/myorderxiangqing/myorderxiangqing"
+    "pages/my/myorders/myorderxiangqing/myorderxiangqing",
+    "pages/my/myorders/tijiaooreder/tijiaooreder",
+    "pages/my/myassets/addresslis/addresslis"
   ],
   "window": {
     "backgroundTextStyle": "dark",

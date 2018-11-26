@@ -1,4 +1,5 @@
 // pages/my/coupons/coupons.js
+const app = getApp();
 Page({
 
 	/**
@@ -12,7 +13,11 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		var that=this;
+		that.setData({
+			userid:wx.getStorageSync("user").id,
+		})
+		that.getyouhuijuan();
 	},
 
 	/**
@@ -82,5 +87,23 @@ Page({
         currentData: e.target.dataset.current
       })
     }
-  }
+  },
+	//获取优惠卷
+	getyouhuijuan:function(){
+		var that=this;
+		var url='/appUser/MyCoupon';
+			var data={pageNumber:'1',
+			pageSize:'10',
+			userId:that.data.userid,
+			state:'2',
+		};
+			app.post(url,data,function(resData){
+				console.log(resData);
+				// that.setData({
+				// 	goodslis:resData.rows,
+				// })
+
+			});
+	}
+
 })
