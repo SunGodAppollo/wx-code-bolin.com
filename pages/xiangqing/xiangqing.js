@@ -9,22 +9,8 @@ Page({
     currentData:0,
     goodsid:0,
     userid:0,
-    imglis:[
-      '/public/img/img1.jpg',
-      '/public/img/img2.jpg',
-      '/public/img/img3.jpg',
-      '/public/img/img4.jpg',
-    ],
-    pinglunlis:[
-      '1',
-      '1',
-      '1',
-      '1',
-      '1',
-      '1',
-      '1',
-      '1',
-    ]
+    imglis:[],
+    pinglunlis:[]
   },
 
   /**
@@ -158,8 +144,10 @@ Page({
   },
   //立即购买-确认订单
   querenoreder:function(){
+    var that=this;
+  
     wx.navigateTo({
-      url: '/pages/my/myorders/querenorder/querenorder'
+      url: '/pages/my/myorders/querenorder/querenorder?shopid='+that.data.goods.shopId+"&goodsid="+that.data.goods.id
     })
   }
 

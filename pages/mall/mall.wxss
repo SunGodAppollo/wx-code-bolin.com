@@ -20,7 +20,7 @@
   padding:10px 5rpx;
 }
 
-.tab{padding: 10px 0px;font-size:14px; /*color:#dedede;*/ float: left; width: 20%;text-align: center; }
+.tab{padding: 10px 0px;font-size:14px; /*color:#dedede;*/ float: left; width: 16%;text-align: center; }
 .topTabSwiper{padding: 10px 0px; zoom: 1;}
 .topTabSwiper:after{content: ""; clear: both;display: block;}
 .tabBorer{padding: 10px 0px;border-bottom: 2px solid #f5c243; color: #f5c243;}

@@ -103,9 +103,25 @@ Page({
   },
 
   //删除收货地址
-  deladdress:function(){
-    wx.navigateTo({
-      url: '/pages/my/myaddress/addaddress/addaddress'
-    })
+  deladdress:function(e){
+    var id=e.currentTarget.dataset.id;
+    var that=this;
+
+    var url='/mall/delAddress';
+    var data={id:id,
+                userId:that.data.userid,
+              };
+    app.post(url,data,function(resData){
+                console.log(resData);
+                wx.showToast({
+                     title: resData.message,
+                     icon: 'succes',
+                     duration: 1000,
+                     mask:true
+                 })
+
+          });
+
+
   },
 })
