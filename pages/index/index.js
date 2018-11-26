@@ -65,5 +65,13 @@ Page({
         })
         console.log(resData);
       });
+  },
+  //显示详情页面
+  show:function(e){
+    var id=e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '/pages/my/myassets/giftcard/giftcarddetails/giftcarddetails?id='+id
+    })
+
   }
 })
