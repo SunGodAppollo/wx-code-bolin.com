@@ -10,7 +10,7 @@
         <button class='car-fixed-button' bindtap='submitFunc'>结算</button>
     </view>
 
-    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}">
+    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}" wx:if="{{item.shopShow}}">
         <view class='car-box-first'>
             <!-- <checkbox-group bindchange="checkboxShopChange"> -->
             <!-- <checkbox wx:if="{{item.isCheck}}" data-index='{{index}}' data-is='0' checked='{{item.isCheck}}' bindtap='checkboxShopChange'></checkbox> -->
@@ -20,14 +20,14 @@
             <image class='check-img' wx:else data-index='{{index}}' data-is='1' src='/public/img/choice_no.png' bindtap='checkboxShopChange'></image>
             <text class='first-title'>{{item.shopName}}</text>
         </view>
-        <view class='car-box-second' wx:for="{{item.product}}" wx:for-item="son" wx:key="{{index}}">
+        <view class='car-box-second' wx:if="{{son.listShow}}" wx:for="{{item.product}}" wx:for-item="son" wx:key="{{index}}">
             <view class='car-main'>
                 <image class='check-img' wx:if="{{son.isChecked}}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='0' src='/public/img/choice.png' bindtap='checkboxChange'></image>
                 <image class='check-img' wx:else data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='1' src='/public/img/choice_no.png' bindtap='checkboxChange'></image>
                 <image class='car-main-img' src='{{son.imgUrl}}' mode='aspectFill'></image>
                 <view class='car-main-right'>
                     <view class='car-main-top'>
-                        <view class='car-main-title'>雅诗兰黛小棕瓶面部精华 特润修护肌透精华露</view>
+                        <view class='car-main-title'>{{son.name}}</view>
                         <view class='car-main-money'>¥ {{son.price}}</view>
                     </view>
                     <view class='car-main-bottom'>

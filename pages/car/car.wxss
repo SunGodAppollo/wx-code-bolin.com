@@ -51,6 +51,7 @@
 .car-main-title {
 	font-size: 26rpx;
 	color: #333;
+	flex-grow: 1;
 }
 .car-main-money {
 	white-space: nowrap;

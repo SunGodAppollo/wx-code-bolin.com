@@ -215,9 +215,11 @@ Page({
             for (let i = 0; i < r.rows.length; i++) {
                 r.rows[i].isCheck = false;
 				r.rows[i].shopNum = i;
+				r.rows[i].shopShow = true;
                 for (let n = 0; n < r.rows[i].product.length; n++) {
                     r.rows[i].product[n].isChecked = false;
 					r.rows[i].product[n].listNum = n;
+					r.rows[i].product[n].listShow = true;
                 }
             }
             self.setData({
@@ -250,7 +252,22 @@ Page({
 						cartIds: String(cartId)
 					},function(r) {
 						if(r.code === 0) {
-							self.getListFunc();
+							//需更改
+							// self.getListFunc();
+							arr[index].product[num].listShow = false;
+							let is = false;
+							for(let i=0;i<arr[index].product.length;i++) {
+								if (arr[index].product[num].listShow) {
+									is = true;
+									return;
+								}
+							}
+							if (!is) {
+								arr[index].shopShow = false;
+							}
+							self.setData({
+								lists: arr
+							})
 						}
 					})
                 }
