@@ -1,0 +1,68 @@
+/* pages/login/login.wxss */
+.login {
+	padding: 0 60rpx;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	background-color: #fff;
+}
+.login-head {
+	width: 160rpx;
+	height: 160rpx;
+	border-radius: 10rpx;
+	margin-bottom: 100rpx;
+}
+.login-choice {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	margin-bottom: 87rpx;
+}
+.login-choice-text {
+	width: 50%;
+	text-align: center;
+	font-size: 30rpx;
+	color: #666;
+	line-height: 60rpx;
+	border-bottom: 2rpx solid #d5d5d5;
+}
+.login-choice-text-checked {
+	color: #f5c243 !important;
+	border-bottom: 2rpx solid #f5c243 !important;
+}
+.login-box {
+	height: 86rpx;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-bottom: 2rpx solid #d5d5d5;
+}
+.login-box-input {
+	flex-grow: 1;
+	font-size: 26rpx;
+	color: #333;
+}
+.login-box-input.input-placeholder {
+	color: #999;
+}
+.login-box-button {
+	color: #999;
+	font-size: 26rpx;
+}
+.login-box-button:active {
+	opacity: .8;
+}
+.login-button {
+	width: 100%;
+	margin-top: 85rpx;
+}
+.login-register {
+	width: 100%;
+	margin-top: 30rpx;
+	background-color: #fff;
+	border: 2rpx solid #f5c243;
+	color: #f5c243;
+}
