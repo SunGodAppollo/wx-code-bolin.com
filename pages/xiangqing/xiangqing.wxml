@@ -8,7 +8,7 @@
   </view>
 </view>
 <view class="fl bottom-2"><button bindtap="addcar" size="mini">加入购物车</button></view>
-<view class="fl bottom-3"><button size="mini" style="background-color:red;">立即购买</button></view>
+<view class="fl bottom-3"><button bindtap="querenoreder" size="mini" style="background-color:red;">立即购买</button></view>
 </view>
 <!--pages/xiangqing/xiangqing.wxml-->
 <swiper indicator-dots="true"

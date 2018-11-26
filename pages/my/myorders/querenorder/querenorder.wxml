@@ -1,0 +1,54 @@
+<view class="pd bottom" style="width:100%;background-color:#fff" >
+  <view class="fl">合计金额:<text style="color:red">￥590.00</text></view>
+  <view class="fr bootom-btn"><button size="mini" bindtap="" class="saveBtn btn btn-m btn-def"  style="color:#fff">提交订单</button></view>
+  <view class="clear"></view>
+</view>
+<view >
+  <view class="pd" style="background-color:#fff">
+  <view>
+    <view class="fl">收货人:王</view>
+    <view class="fr">18980004397</view>
+    <view class="clear"></view>
+  </view>
+  <view>详细地址:xxxxxxxx</view>
+  </view>
+
+  <view class="pd xing" style="background-color:#fff">
+  <view class="fl left">
+      <image mode="aspectFit" src="/public/img/example.jpg"  style="height:80px;width:80px;"/>
+  </view>
+  <view class="fr right">
+  <view>18980004397</view>
+  <view class="fl" style="color:red">￥590.00</view>
+  <view class="fr">x1</view>
+  <view class="clear"></view>
+  </view>
+  <view class="clear"></view>
+  </view>
+
+  <view class="pd info" style="background-color:#fff">
+  <view class="info-item">
+    <view class="fl">购买数量:</view>
+    <view class="fr">
+      1
+    </view>
+    <view class="clear"></view>
+  </view>
+  <view class="info-item">
+    <view class="fl">运费:</view>
+    <view class="fr">无</view>
+    <view class="clear"></view>
+  </view>
+  <view class="info-item">
+    <view class="fl">优惠卷:</view>
+    <view class="fr">无</view>
+    <view class="clear"></view>
+  </view>
+  <view class="info-item">
+    <view class="fl">礼品卡:</view>
+    <view class="fr">无</view>
+    <view class="clear"></view>
+  </view>
+
+  </view>
+</view>

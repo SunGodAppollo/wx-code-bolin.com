@@ -1,0 +1,26 @@
+.item{
+  margin: 20px 0px;
+  background-color:#fff;
+  font-size: 14px;
+}
+.item-left{
+  background-color: #fff;
+  box-sizing:border-box;
+  padding: 10px;
+
+  height:100px;
+  height: 100%;
+}
+
+.bottom-left{
+  float: left;
+}
+.bottom-right{
+  float: right;
+}
+.bottom-btn{
+  position: fixed;
+  bottom: 10px;
+  left: 10%;
+  width:80%;
+}

@@ -1,4 +1,4 @@
-// pages/my/myassets/addresslis/addresslis.js
+// pages/my/myaddress/editaddress/editaddress.js
 Page({
 
   /**

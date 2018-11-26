@@ -366,5 +366,11 @@ Page({
 		wx.navigateTo({
 			url: '/pages/changepassword/changepassword'
 		})
-	}
+	},
+  //跳转到地址列表
+  addresslis:function(){
+    wx.navigateTo({
+			url: '/pages/my/myaddress/addresslis/addresslis'
+		})
+  }
 })

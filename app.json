@@ -31,7 +31,10 @@
     "pages/my/myorders/myorders",
     "pages/my/myorders/myorderxiangqing/myorderxiangqing",
     "pages/my/myorders/tijiaooreder/tijiaooreder",
-    "pages/my/myassets/addresslis/addresslis"
+    "pages/my/myaddress/addresslis/addresslis",
+    "pages/my/myaddress/addaddress/addaddress",
+    "pages/my/myaddress/editaddress/editaddress",
+    "pages/my/myorders/querenorder/querenorder"
   ],
   "window": {
     "backgroundTextStyle": "dark",

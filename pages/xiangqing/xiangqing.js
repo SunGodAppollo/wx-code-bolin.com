@@ -157,7 +157,11 @@ Page({
       });
   },
   //立即购买-确认订单
-  
+  querenoreder:function(){
+    wx.navigateTo({
+      url: '/pages/my/myorders/querenorder/querenorder'
+    })
+  }
 
 
 })

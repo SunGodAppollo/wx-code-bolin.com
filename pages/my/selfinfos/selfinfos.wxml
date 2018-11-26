@@ -38,10 +38,10 @@
                 <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
             </view>
         </view>
-        <view class='infos-list-p' url="/pages/my/myassets/addresslis/addresslis">
+        <view class='infos-list-p' >
             <view class='infos-list-m'>
                 <text class='infos-name'>我的收货地址</text>
-                <image class='infos-right' src='/public/img/right.png' mode='aspectFit'></image>
+                <image class='infos-right' src='/public/img/right.png' bindtap="addresslis"  mode='aspectFit'></image>
             </view>
         </view>
     </view>

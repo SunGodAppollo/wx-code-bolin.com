@@ -105,7 +105,7 @@ Page({
   //设置分类
   setFenlei:function(){
     var that=this;
-    var url='/mall/getIndustryList';
+    var url='/mall/getAddressList';
     var data={};
       app.post(url,data,function(resData){
         console.log(resData);
@@ -132,6 +132,6 @@ Page({
 
       });
   },
-  
+
 
 })

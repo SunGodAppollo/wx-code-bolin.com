@@ -1,0 +1,28 @@
+.pd{
+padding: 10px;
+}
+.xing{
+  height: 100px;
+  margin-top: 10px;
+}
+.left{
+  width: 50%;
+  text-align: left;
+}
+.right{
+  width: 50%;
+}
+.info{
+  margin-top: 10px;
+}
+.info-item{
+  padding: 10px 0px;
+}
+.bottom{
+  position:fixed;
+  bottom: 0px;
+}
+.bootom-btn{
+  text-align: right;
+  margin-right: 30px;
+}
