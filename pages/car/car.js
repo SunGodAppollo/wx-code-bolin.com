@@ -220,11 +220,19 @@ Page({
                     r.rows[i].product[n].isChecked = false;
 					r.rows[i].product[n].listNum = n;
 					r.rows[i].product[n].listShow = true;
+					r.rows[i].product[n].maxShopNum = 9999;
                 }
             }
+			if (pageSize> r.rows.length) {
+				self.setData({
+					pageFinesh: false
+				})
+			}else{
+				pageNumber = pageNumber+1;
+			}
             self.setData({
                 lists: r.rows,
-				pageNumber: (pageNumber+1)
+				pageNumber: pageNumber
             })
         });
     },
@@ -287,16 +295,25 @@ Page({
 		var arr = self.data.lists;
 		var index = e.target.dataset.index;
 		var num = e.target.dataset.num;
-		arr[index].product[num].number = number;
-		self.setData({
-			lists: arr
-		})
 		getApp().post('/mall/upCartNum',{
 			userId: wx.getStorageSync('user').id,
 			cartId: cartId,
 			number: number
-		},function(r) {})
-		self.computAllMoneyFunc();
+		},function(r) {
+			if(r.code === 0) {
+				self.computAllMoneyFunc();
+				arr[index].product[num].number = number;
+				self.setData({
+					lists: arr
+				})
+			}else{
+				arr[index].product[num].number = number - 1;
+				arr[index].product[num].maxShopNum = number - 1;
+				self.setData({
+					lists: arr
+				})
+			}
+		})
     },
 
 	//拉去下一页数据
@@ -315,9 +332,12 @@ Page({
 				for (let i = 0; i < r.rows.length; i++) {
 					r.rows[i].isCheck = false;
 					r.rows[i].shopNum = i;
+					r.rows[i].shopShow = true;
 					for (let n = 0; n < r.rows[i].product.length; n++) {
 						r.rows[i].product[n].isChecked = false;
 						r.rows[i].product[n].listNum = n;
+						r.rows[i].product[n].listShow = true;
+						r.rows[i].product[n].maxShopNum = 9999;
 					}
 					arr.push(r.rows[i]);
 				}

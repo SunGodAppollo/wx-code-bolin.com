@@ -6,7 +6,7 @@
 	margin-bottom: 150rpx;
 }
 .car-box-first {
-	margin-top: 30rpx;
+	/* margin-top: 30rpx; */
 	height: 96rpx;
 	display: flex;
 	flex-direction: row;

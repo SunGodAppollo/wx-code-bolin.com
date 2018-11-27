@@ -31,8 +31,8 @@ Page({
         //修改生日弹窗控件
         dateshow: false,
         userDate: "1970-1-1",
-        maxDate: new Date(),
-        minDate: new Date(1940, 0, 1)
+		maxDate: new Date().getTime(),
+		minDate: new Date(1940, 0, 1).getTime()
     },
 
     /**

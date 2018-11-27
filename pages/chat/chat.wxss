@@ -47,8 +47,14 @@
 	padding: 0 30rpx;
 	margin-bottom: 130rpx;
 }
+.chat-nav {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
 .chat-time {
-	width: 100rpx;
+	padding: 0 20rpx;
 	height: 42rpx;
 	border-radius: 42rpx;
 	background-color: #d9d9d9;

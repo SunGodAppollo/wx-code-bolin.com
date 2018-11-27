@@ -1,24 +1,31 @@
 <!--pages/chat/chat.wxml-->
 <view class='chat'>
-	<view class='chat-box'>
-		<view class='chat-time'>10:10</view>
-		<view class='chat-right'>
-			<view class='chat-right-message'>有人在吗</view>
-			<view class='chat-right-icon'></view>
-			<image class='chat-right-head' src='/public/img/example.jpg' mode='aspectFill'></image>
-		</view>
-		<view class='chat-left'>
-			<image class='chat-right-head' src='/public/img/example.jpg' mode='aspectFill'></image>
-			<view class='chat-left-icon'></view>
-			<view class='chat-left-message'>您好,请问有什么可以帮助您的?</view>
-		</view>
-	</view>
-	<view class='chat-bottom'>
-		<image class='chat-bottom-img' src='/public/img/voice.png' mode='aspectFit'></image>
-		<view class='chat-bottom-center'>
-			<input class='chat-bottom-input' placeholder='请输入您要咨询的问题' confirm-type="send" bindinput="bindKeyInput"></input>
-			<image class='chat-bottom-img' src='/public/img/smile.png' mode='aspectFit'></image>
-		</view>
-		<image class='chat-bottom-img' src='/public/img/add.png' mode='aspectFit'></image>
-	</view>
+    <view class='chat-box'>
+        <view class='chat-nav' wx:for="{{lists}}" wx:key="{{index}}">
+            <block wx:if="{{item.user === 0}}">
+                <view class='chat-time'>{{item.time}}</view>
+                <view class='chat-left'>
+                    <image class='chat-right-head' src='/public/img/example.jpg' mode='aspectFill'></image>
+                    <view class='chat-left-icon'></view>
+                    <view class='chat-left-message'>{{item.cont}}</view>
+                </view>
+            </block>
+            <block wx:else>
+                <view class='chat-time'>{{item.time}}</view>
+                <view class='chat-right'>
+                    <view class='chat-right-message'>{{item.cont}}</view>
+                    <view class='chat-right-icon'></view>
+                    <image class='chat-right-head' src='/public/img/example.jpg' mode='aspectFill'></image>
+                </view>
+            </block>
+        </view>
+    </view>
+    <view class='chat-bottom'>
+        <image class='chat-bottom-img' src='/public/img/voice.png' mode='aspectFit'></image>
+        <view class='chat-bottom-center'>
+            <input class='chat-bottom-input' value='{{inputValue}}' placeholder='请输入您要咨询的问题' confirm-type="send" bindinput="bindKeyInput" bindconfirm="sendFunc"></input>
+            <image class='chat-bottom-img' src='/public/img/smile.png' mode='aspectFit'></image>
+        </view>
+        <image class='chat-bottom-img' src='/public/img/add.png' mode='aspectFit'></image>
+    </view>
 </view>

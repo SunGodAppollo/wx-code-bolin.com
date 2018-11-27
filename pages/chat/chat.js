@@ -5,7 +5,14 @@ Page({
      * 页面的初始数据
      */
     data: {
-        inputValue: ""
+        inputValue: "",
+		lists: [
+			{
+				user: 0,
+				cont: "您好,请问有什么可以帮助您的?",
+				time: new Date().toLocaleTimeString()
+			}
+		]
     },
 
     /**
@@ -69,4 +76,21 @@ Page({
             inputValue: e.detail.value
         })
     },
+
+	//发送数据
+	sendFunc: function(e) {
+		var time = new Date().toLocaleTimeString();
+		var self = this;
+		var value = e.detail.value;
+		var arr = self.data.lists;
+		arr.push({
+			user: 1,
+			cont: value,
+			time: time
+		});
+		self.setData({
+			lists: arr,
+			inputValue: ""
+		})
+	}
 })

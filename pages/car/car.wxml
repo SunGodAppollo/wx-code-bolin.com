@@ -10,7 +10,7 @@
         <button class='car-fixed-button' bindtap='submitFunc'>结算</button>
     </view>
 
-    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}" wx:if="{{item.shopShow}}">
+    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}" wx:if="{{item.shopShow}}" style='padding-top:30rpx;'>
         <view class='car-box-first'>
             <!-- <checkbox-group bindchange="checkboxShopChange"> -->
             <!-- <checkbox wx:if="{{item.isCheck}}" data-index='{{index}}' data-is='0' checked='{{item.isCheck}}' bindtap='checkboxShopChange'></checkbox> -->
@@ -31,7 +31,7 @@
                         <view class='car-main-money'>¥ {{son.price}}</view>
                     </view>
                     <view class='car-main-bottom'>
-                        <van-stepper value="{{ son.number }}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-id="{{ son.cartId }}" bind:change="onButtonChange" />
+                        <van-stepper value="{{ son.number }}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-id="{{ son.cartId }}" max="{{son.maxShopNum}}" bind:change="onButtonChange" />
                         <image class='car-main-delete' data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-id="{{ son.cartId }}" src='/public/img/delete.png' bindtap='deleteFunc'></image>
                     </view>
                 </view>
