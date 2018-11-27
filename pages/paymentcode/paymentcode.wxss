@@ -20,3 +20,7 @@
 	font-size: 26rpx;
 	color: #b3b3b3;
 }
+.payment-text-black {
+	font-size: 26rpx;
+	color: #666;
+}

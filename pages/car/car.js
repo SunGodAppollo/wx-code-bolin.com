@@ -262,7 +262,7 @@ Page({
 						if(r.code === 0) {
 							// self.getListFunc();
 							arr[index].product[num].listShow = false;
-							arr[index].product[num].isCheck = false;
+							arr[index].product[num].isChecked = false;
 							var is = false;
 							for(let i=0;i<arr[index].product.length;i++) {
 								if (arr[index].product[i].listShow) {
@@ -280,6 +280,7 @@ Page({
 							self.setData({
 								lists: arr
 							})
+							self.computAllMoneyFunc();
 						}
 					})
                 }
@@ -398,6 +399,13 @@ Page({
 		//需要修改
 		wx.navigateTo({
 			url: '/pages/my/myorders/querenorder/querenorder?caris=true',
+		})
+	},
+
+	//跳转到商品详情页面
+	goDetailsFunc: function(e) {
+		wx.navigateTo({
+			url: '/pages/xiangqing/xiangqing?goodsid=' + e.target.dataset.id
 		})
 	}
 })

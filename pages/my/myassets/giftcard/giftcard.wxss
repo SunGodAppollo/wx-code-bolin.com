@@ -1,4 +1,9 @@
 /* pages/my/myassets/giftcard/giftcard.wxss */
+.gift-scroll {
+	height: 100vh;
+	box-sizing: border-box;
+	padding-top: 30rpx;
+}
 .top {
 	/* margin-bottom: 30rpx; */
 	box-sizing: border-box;
@@ -79,9 +84,9 @@
 .top-main-second:last-child {
 	margin-bottom: 0;
 }
-.gift {
+/* .gift {
 	margin-top: 30rpx;
-}
+} */
 .gift-bottom {
 	position: fixed;
 	left: 0;

@@ -81,3 +81,10 @@ button.button-hover {
 	font-size: 26rpx;
 	color: #999;
 }
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

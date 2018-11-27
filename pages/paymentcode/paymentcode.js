@@ -12,7 +12,8 @@ Page({
 			oneCode: "",
 			qrCode: "",
 			title: ""
-		}
+		},
+		status: true
 	},
 
 	/**
@@ -83,5 +84,12 @@ Page({
 				})
 			}
 		});
+	},
+	
+	//显示付款数字
+	showCoreFunc: function() {
+		this.setData({
+			status: false
+		})
 	}
 })

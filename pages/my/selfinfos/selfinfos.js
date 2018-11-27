@@ -332,15 +332,16 @@ Page({
     },
 
     //时间点击确认
-    onDateConfirm: function() {
+    onDateConfirm: function(e) {
 		var self = this;
+		var time = self.fmtDate(e.detail);
 		getApp().post('/appUser/updateUserInfo', {
 			id: wx.getStorageSync('user').id,
-			birthday: self.data.userDate
+			birthday: time
 		}, function (r) {
 			if (r.code === 0) {
 				self.setData({
-					"infos.birthday": self.data.userDate,
+					"infos.birthday": time,
 					dateshow: false
 				})
 				wx.showToast({

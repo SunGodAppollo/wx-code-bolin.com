@@ -1,26 +1,28 @@
 <!--pages/my/myassets/giftcard/giftcard.wxml-->
-<view class='gift'>
-	<view class='gift-bottom'>
-		<view class='gift-bottom-left'>购买新的礼品卡</view>
-		<view class='gift-bottom-right' bindtap="bangdingnewcard">绑定新卡</view>
+<scroll-view class='gift-scroll' scroll-y bindscrolltolower="scrollBottomFunc">
+    <view class='gift'>
+        <view class='gift-bottom'>
+            <view class='gift-bottom-left' bindtap='goMallFunc'>购买新的礼品卡</view>
+            <view class='gift-bottom-right' bindtap="bangdingnewcard">绑定新卡</view>
 
-	</view>
-	<!-- <view class='top' wx:for="{{lists}}" wx:key="{{index}}" bindtap='toDetailsFunc'> -->
-	<view class='top' wx:for="{{lists}}" wx:key="{{index}}">
-		<view class='top-main'>
-			<image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
-			<view class='top-main-box'>
-				<view class='top-main-first'>
-					<!-- <image class='top-main-first-title' src='' mode='aspectFill'></image> -->
-					<text class='top-main-first-name'>{{item.title}}</text>
-					<!-- <view class='top-main-first-code bg-contain'></view> -->
-				</view>
-				<view>
-					<view class='top-main-second'>礼品卡面值: {{item.denomination}}</view>
-					<view class='top-main-second'>当前余额: {{item.balance}}</view>
-				</view>
-			</view>
-		</view>
-	</view>
-	<view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
-</view>
+        </view>
+        <!-- <view class='top' wx:for="{{lists}}" wx:key="{{index}}" bindtap='toDetailsFunc'> -->
+        <view class='top' wx:for="{{lists}}" wx:key="{{index}}">
+            <view class='top-main'>
+                <image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+                <view class='top-main-box'>
+                    <view class='top-main-first'>
+                        <!-- <image class='top-main-first-title' src='' mode='aspectFill'></image> -->
+                        <text class='top-main-first-name'>{{item.title}}</text>
+                        <!-- <view class='top-main-first-code bg-contain'></view> -->
+                    </view>
+                    <view>
+                        <view class='top-main-second'>礼品卡面值: {{item.denomination}}</view>
+                        <view class='top-main-second'>当前余额: {{item.balance}}</view>
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
+    </view>
+</scroll-view>

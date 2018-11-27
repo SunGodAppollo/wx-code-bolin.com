@@ -2,5 +2,6 @@
 <view class='payment'>
 	<image class='payment-title' src='{{infos.logoUrl}}' mode='aspectFill'></image>
 	<image class='payment-code' src='{{infos.oneCode}}' mode='aspectFit'></image>
-	<text class='payment-text'>点击可查看付款码数字</text>
+	<text class='payment-text' wx:if="{{status}}" bindtap='showCoreFunc'>点击可查看付款码数字</text>
+	<text class='payment-text-black' wx:else>{{infos.cardCore}}</text>
 </view>

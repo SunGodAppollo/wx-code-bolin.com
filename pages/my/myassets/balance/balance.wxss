@@ -18,7 +18,7 @@
 .box-second {
 	margin-top: 30rpx;
 	background-color: #fff;
-	padding: 35rpx 30rpx;
+	padding: 35rpx 0 0 40rpx;
 }
 .box-second-title {
 	font-size: 28rpx;
@@ -28,6 +28,7 @@
 .box-second-box {
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 }
 .box-second-nav {
 	/* width: 146rpx; */
@@ -41,12 +42,16 @@
 	position: relative;
 }
 .box-second-main {
-	margin-right: 40rpx;
-	flex-grow: 1;
+	padding-right: 40rpx;
+	padding-bottom: 40rpx;
+	flex-shrink: 0;
+	flex-grow: 0;
+	box-sizing: border-box;
+	width: 25%;
 }
-.box-second-main:last-child {
+/* .box-second-main:last-child {
 	margin-right: 0;
-}
+} */
 .box-second-one {
 	position: absolute;
 	left: 0;

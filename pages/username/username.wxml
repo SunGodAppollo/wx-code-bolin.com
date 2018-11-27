@@ -1,7 +1,7 @@
 <!--pages/username/username.wxml-->
 <view class='username'>
 	<view class='username-top'>
-		<input class='username-nickname' placeholder='请输入昵称' value='{{name}}' bindinput='changeNameFunc'></input>
+		<input class='username-nickname' placeholder='请输入昵称' value='{{name}}' maxlength='9' bindinput='changeNameFunc'></input>
 	</view>
 	<view class='username-bottom'>
 		<button bindtap='submitFunc'>完成</button>

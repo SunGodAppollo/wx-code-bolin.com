@@ -24,10 +24,10 @@
             <view class='car-main'>
                 <image class='check-img' wx:if="{{son.isChecked}}" data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='0' src='/public/img/choice.png' bindtap='checkboxChange'></image>
                 <image class='check-img' wx:else data-index='{{item.shopNum}}' data-num='{{son.listNum}}' data-is='1' src='/public/img/choice_no.png' bindtap='checkboxChange'></image>
-                <image class='car-main-img' src='{{son.imgUrl}}' mode='aspectFill'></image>
+                <image class='car-main-img' src='{{son.imgUrl}}' mode='aspectFill' data-id='{{son.productId}}' bindtap='goDetailsFunc'></image>
                 <view class='car-main-right'>
                     <view class='car-main-top'>
-                        <view class='car-main-title'>{{son.name}}</view>
+                        <view class='car-main-title' data-id='{{son.productId}}' bindtap='goDetailsFunc'>{{son.name}}</view>
                         <view class='car-main-money'>¥ {{son.price}}</view>
                     </view>
                     <view class='car-main-bottom'>

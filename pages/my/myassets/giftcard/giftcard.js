@@ -5,7 +5,10 @@ Page({
      * 页面的初始数据
      */
     data: {
-		lists: []
+        lists: [],
+        pageNumber: 1,
+        pageSize: 10,
+		finesh: true
     },
 
     /**
@@ -26,7 +29,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function() {
-		this.getFunc();
+        this.getFunc();
     },
 
     /**
@@ -76,19 +79,66 @@ Page({
             url: '/pages/my/bangdingnewcard/bangdingnewcard'
         });
     },
-	
 
-	//获取列表数据
-	getFunc: function() {
-		var self = this;
-		getApp().post('/appUser/MyGiftCard',{
-			userId: wx.getStorageSync('user').id
-		},function(r){
-			if(r.code === 0) {
-				self.setData({
-					lists: r.data
-				})
+
+    //获取列表数据
+    getFunc: function() {
+        var self = this;
+        var pageNumber = self.data.pageNumber;
+        var pageSize = self.data.pageSize;
+		var finesh = self.data.finesh;
+        getApp().post('/appUser/MyGiftCard', {
+            userId: wx.getStorageSync('user').id,
+            pageNumber: pageNumber,
+            pageSize: pageSize
+        }, function(r) {
+			if (r.rows.length < pageSize) {
+				finesh = false;
+			}else{
+				pageNumber = pageNumber+1;
 			}
-		})
-	}
+            self.setData({
+                lists: r.rows,
+				finesh: finesh,
+				pageNumber: pageNumber
+            })
+        })
+    },
+
+	//滚动到底部获取数据
+	scrollBottomFunc: function() {
+		var self = this;
+		if(self.data.finesh) {
+			var pageNumber = self.data.pageNumber;
+			var pageSize = self.data.pageSize;
+			var finesh = self.data.finesh;
+			var arr = self.data.lists;
+			getApp().post('/appUser/MyGiftCard', {
+				userId: wx.getStorageSync('user').id,
+				pageNumber: pageNumber,
+				pageSize: pageSize
+			}, function (r) {
+				if (r.rows.length < pageSize) {
+					finesh = false;
+				} else {
+					pageNumber = pageNumber + 1;
+				}
+				for(let i=0;i<r.rows.length;i++) {
+					arr.push(r.rows[i]);
+				}
+				self.setData({
+					lists: arr,
+					finesh: finesh,
+					pageNumber: pageNumber
+				})
+			})
+		}
+	},
+
+    //跳转到商城页面
+    goMallFunc: function() {
+        wx.switchTab({
+            url: 'pages/mall/mall?current=1',
+        })
+    }
 })
