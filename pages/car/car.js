@@ -32,7 +32,10 @@ Page({
      */
     onShow: function() {
 		this.setData({
-			pageNumber: 1
+			pageNumber: 1,
+			allIsChecked: false,
+			allPrice: 0,
+			pageFinesh: true
 		})
         this.getListFunc();
     },
@@ -387,19 +390,22 @@ Page({
 		getApp().globalData.carIds = carIds;
 		getApp().globalData.info = JSON.stringify(info);
 		//需要修改
-		// getApp().post('/order/confirmOrder', {
-		// 	userId: wx.getStorageSync('user').id,
-		// 	carIds: carIds,
-		// 	info: JSON.stringify(info)
-		// },function(r) {
-		// 	wx.navigateTo({
-		// 		url: '?data=' + JSON.stringify(r.data)
-		// 	})
-		// })
-		//需要修改
-		wx.navigateTo({
-			url: '/pages/my/myorders/querenorder/querenorder?caris=true',
+		getApp().post('/order/confirmOrder', {
+			userId: wx.getStorageSync('user').id,
+			carIds: carIds,
+			info: JSON.stringify(info)
+		},function(r) {
+			if(r.code === 0) {
+				getApp().globalData.resData = r;
+				wx.navigateTo({
+					url: '/pages/my/myorders/querenorder/querenorder?caris=true',
+				})
+			}
 		})
+		//需要修改
+		// wx.navigateTo({
+		// 	url: '/pages/my/myorders/querenorder/querenorder?caris=true',
+		// })
 	},
 
 	//跳转到商品详情页面

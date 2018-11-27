@@ -1,5 +1,6 @@
 <!--pages/my/myassets/giftcard/giftcard.wxml-->
 <scroll-view class='gift-scroll' scroll-y bindscrolltolower="scrollBottomFunc">
+<view style='height:30rpx;background-color:f5f5f5;'></view>
     <view class='gift'>
         <view class='gift-bottom'>
             <view class='gift-bottom-left' bindtap='goMallFunc'>购买新的礼品卡</view>

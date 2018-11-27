@@ -11,6 +11,7 @@ Page({
     address:[],
     suc:[],
     alldata:[],
+	  carIds: ""
   },
 
   /**
@@ -18,12 +19,21 @@ Page({
    */
   onLoad: function (options) {
     var that=this;
-    var info="[{'shopId': '"+options.shopid+"','infos': [{'productId': '"+options.goodsid+"','num': '1'}]}]";
-    that.setData({
-      info:info,
-      userid:wx.getStorageSync("user").id,
-    });
-    that.getorder();
+	  if (options.caris) {
+		  var resData = getApp().globalData.resData;
+		  that.setData({
+			  alldata: resData.data,
+			  address: resData.data.deaddr,
+			  suc: resData.data.suc,
+		  });
+	}else{
+		var info = "[{'shopId': '" + options.shopid + "','infos': [{'productId': '" + options.goodsid + "','num': '1'}]}]";
+		that.setData({
+			info: info,
+			userid: wx.getStorageSync("user").id,
+		});
+		that.getorder();
+	}
   },
 
   /**
@@ -79,7 +89,7 @@ Page({
   getorder:function(){
     var that=this;
     var url='/order/confirmOrder';
-      var data={userId:that.data.userid,info:that.data.info};
+	  var data = { userId: that.data.userid, info: that.data.info, carIds: that.data.carIds};
       app.post(url,data,function(resData){
         console.log(resData);
         that.setData({
@@ -124,7 +134,11 @@ Page({
        var data={userId:that.data.userid,info:info};
        app.post(url,data,function(resData){
          console.log(resData);
-
+			if(resData.code === 0) {
+				wx.redirectTo({
+					url: '/pages/pay/pay?payid=' + resData.data.payid + "&payAmount=" + resData.data.payAmount + "&payNum=" + resData.data.payNum,
+				})
+			}
        });
   },
 

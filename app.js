@@ -87,7 +87,6 @@ App({
 		userInfo: null,
 		appUrl: "https://p-in.cn",
 		routerName: "",
-		carIds: "",
-		info: []
+		resData: {}
 	}
 })

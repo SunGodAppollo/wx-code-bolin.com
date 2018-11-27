@@ -2,7 +2,6 @@
 .gift-scroll {
 	height: 100vh;
 	box-sizing: border-box;
-	padding-top: 30rpx;
 }
 .top {
 	/* margin-bottom: 30rpx; */

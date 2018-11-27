@@ -72,7 +72,7 @@ Page({
 	//查看订单
 	goOrderFunc: function() {
 		wx.redirectTo({
-			url: '/pages/my/myorders/myorderxiangqing/myorderxiangqing',
+			url: '/pages/my/myorders/myorders',
 		})
 	}
 })
