@@ -101,7 +101,7 @@ Page({
          var info={
            productId:v.productId,
            num:v.num,
-           secondId:'4c22812356a0414383046bf7eea2bd3b'
+           //secondId:'4c22812356a0414383046bf7eea2bd3b'
          }
          myinfos.push(info);
       });
@@ -109,7 +109,7 @@ Page({
       var myshop={
         shopId:value.shopId,
         addrId:addressid,
-        couponId:'0',
+        //couponId:'4',
         infos:myinfos,
       };
       allinfo.push(myshop);
