@@ -93,6 +93,18 @@ Page({
       this.setGoodsByFid(that.data.id);
     }
   },
+  //滑动改变
+  bindchange:function(e){
+    const that = this;
+    var v=e.detail.current;
+    that.setData({
+      currentData:v,
+      id:that.data.fenlei[v].id
+    });
+    //更新
+    this.setGoodsByFid(that.data.id);
+    console.log(v);
+  },
   //显示详情
   showinfo:function(e){
     //获取商品的id
