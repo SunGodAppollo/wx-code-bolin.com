@@ -8,6 +8,8 @@ Page({
   data: {
     userid:0,
     addlis:[],
+    noactionimg:'/public/img/choice_no.png',
+    actionimg:'/public/img/choice.png',
   },
 
   /**
@@ -101,6 +103,7 @@ Page({
                   addlis:resData.rows,
                 });
                 */
+                that.onShow();
 
           });
   },
