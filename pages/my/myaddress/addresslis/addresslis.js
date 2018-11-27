@@ -14,11 +14,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
-    that.setData({
-      userid:wx.getStorageSync("user").id,
-    });
-    that.getaddresslis();
+
   },
 
   /**
@@ -32,7 +28,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    var that=this;
+    that.setData({
+      userid:wx.getStorageSync("user").id,
+    });
+    that.getaddresslis();
   },
 
   /**
@@ -86,7 +86,24 @@ Page({
 
           });
   },
+ //修改默认地址
+  changeaddress:function(e){
+    var that=this;
+    var id=e.currentTarget.dataset.id;
+    var url='/mall/defaultPath';
+    var data={userId:that.data.userid,
+                id:id,
+              };
+    app.post(url,data,function(resData){
+                console.log(resData);
+                /*
+                that.setData({
+                  addlis:resData.rows,
+                });
+                */
 
+          });
+  },
 
   //添加收货地址
   addaddress:function(){
@@ -118,8 +135,8 @@ Page({
                      icon: 'succes',
                      duration: 1000,
                      mask:true
-                 })
-
+                 });
+                 that.onShow();
           });
 
 

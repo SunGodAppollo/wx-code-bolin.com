@@ -101,7 +101,7 @@ Page({
          var info={
            productId:v.productId,
            num:v.num,
-           secondId:'0'
+           secondId:'4c22812356a0414383046bf7eea2bd3b'
          }
          myinfos.push(info);
       });

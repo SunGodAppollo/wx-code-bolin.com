@@ -7,6 +7,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    activityimg:'',
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -44,6 +45,7 @@ Page({
     }
     //设置页面信息
     this.setPageContent();
+    this.setActivityImg();
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -66,6 +68,19 @@ Page({
         console.log(resData);
       });
   },
+  //设置活动图
+  setActivityImg:function(){
+    var that=this;
+    var url='/appUser/getAdvertisement';
+    var data={};
+      app.post(url,data,function(resData){
+        that.setData({
+          activityimg:resData.data[0].imgPath
+        })
+        console.log(resData);
+      });
+  },
+
   //显示详情页面
   show:function(e){
     var id=e.currentTarget.dataset.id;

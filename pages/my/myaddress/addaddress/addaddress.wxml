@@ -2,13 +2,13 @@
 <view style="padding:10px 30px; border-bottom: 1px solid #ddd;">
 <label >收货人:</label>
 
-<input  bindinput='nameFunc' value="{{name}}" class="fr" maxlength="10" placeholder="" />
+<input  bindinput='nameFunc' value="{{name}}" class="fr" maxlength="20" placeholder="" />
 </view>
 
 <view style="padding:10px 30px; border-bottom: 1px solid #ddd;">
 <label >手机号码:</label>
 
-<input  bindinput='phoneFunc' class="fr" value="{{phone}}" maxlength="10" placeholder="" />
+<input  bindinput='phoneFunc' class="fr" value="{{phone}}" maxlength="20" placeholder="" />
 </view>
 
 <view style="padding:10px 30px; border-bottom: 1px solid #ddd;">

@@ -1,5 +1,5 @@
 <view class="top-view">
-    <image  style="width: 100%; height: 100px; background-color: #eeeeee;"  src="/public/img/img1.jpg"></image>
+    <image  style="width: 100%; height: 100px; background-color: #eeeeee;"  src="{{activityimg}}"></image>
 </view>
 
 <view class="title">

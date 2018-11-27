@@ -114,7 +114,10 @@ Page({
                      icon: 'succes',
                      duration: 1000,
                      mask:true
-                 })
+                 });
+                 wx.navigateBack({
+                    delta: '1'
+                  });
           });
 
   },
