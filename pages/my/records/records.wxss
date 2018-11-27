@@ -1,18 +1,26 @@
 /* pages/my/records/records.wxss */
 .records {
-	margin-top: 30rpx;
+	/* margin-top: 30rpx; */
 }
 .records-main {
-	padding: 0 30rpx;
+	padding: 30rpx;
 	background-color: #fff;
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	height: 94rpx;
+	flex-direction: column;
+	justify-content: center;
 	border-bottom: 1rpx solid #e5e5e5;
 	font-size: 28rpx;
 	color: #333;
+	line-height: 40rpx;
 }
 .records-main:last-child {
 	border-bottom: 1rpx solid transparent;
+}
+.records-main-first {
+	width: 100%;
+}
+.records-main-second {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }

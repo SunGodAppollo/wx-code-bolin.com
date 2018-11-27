@@ -1,9 +1,11 @@
 <!--pages/my/mycards/mycards.wxml-->
-<view class='cards'>
-	<view class='cards-main' wx:for="{{lists}}" wx:key="{{index}}" data-id='{{item.id}}'>
-		<image class='main-head' src='{{item.logo}}' mode='aspectFill'></image>
-		<text class='main-title'>{{item.title}}</text>
-		<text class='main-right'>剩余{{item.surplusNum}}次</text>
-	</view>
-</view>
-<view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
+<scroll-view scroll-y style="height: 100vh;box-sizing:border-box;padding-top:30rpx;" bindscrolltolower="scrollBottomFunc">
+    <view class='cards'>
+        <view class='cards-main' wx:for="{{lists}}" wx:key="{{index}}" data-id='{{item.id}}'>
+            <image class='main-head' src='{{item.logo}}' mode='aspectFill'></image>
+            <text class='main-title'>{{item.title}}</text>
+            <text class='main-right'>剩余{{item.surplusNum}}次</text>
+        </view>
+    </view>
+    <view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
+</scroll-view>

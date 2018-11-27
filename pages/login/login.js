@@ -132,6 +132,7 @@ Page({
 
     //快速登录
     quickLoginFunc: function() {
+		var self = this;
         getApp().post('/appUser/loginFast', {
             phone: this.data.tel,
 			verifyCode: this.data.code

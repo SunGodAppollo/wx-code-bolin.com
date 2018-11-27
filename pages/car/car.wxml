@@ -1,5 +1,5 @@
 <!--pages/car/car.wxml-->
-<scroll-view class='car' scroll-y="true" bindscrolltolower="bindscrolltoupperFunc">
+<scroll-view class='car' scroll-y="true" bindscrolltolower="bindscrolltoupperFunc" style="height: 100vh;">
     <view class='car-fixed'>
         <checkbox-group bindchange="checkboxAllChange">
             <checkbox value='all' checked='{{allIsChecked}}'></checkbox>

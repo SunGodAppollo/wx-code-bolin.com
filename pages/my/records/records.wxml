@@ -1,9 +1,16 @@
 <!--pages/my/records/records.wxml-->
-<view class='records'>
-	<view class='records-main' wx:for="{{lists}}" wx:key="{{index}}">
-		<text class='records-title'>{{item.name}}</text>
-		<text class='records-date'>{{item.createTime}}</text>
-		<text class='records-details'>{{item.amount}}</text>
-	</view>
-</view>
-<view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
+<scroll-view scroll-y style="height: 100vh;box-sizing:border-box;padding-top:30rpx;" bindscrolltolower="scrollBottomFunc">
+	<view></view>
+    <view class='records'>
+        <view class='records-main' wx:for="{{lists}}" wx:key="{{index}}">
+            <view class="records-main-first">
+                <text class='records-title'>{{item.name}}</text>
+            </view>
+            <view class="records-main-second">
+                <text class='records-date'>{{item.createTime}}</text>
+                <text class='records-details'>{{item.amount}}</text>
+            </view>
+        </view>
+    </view>
+    <view class='no-data' wx:if="{{lists.length === 0}}">暂无数据~</view>
+</scroll-view>
