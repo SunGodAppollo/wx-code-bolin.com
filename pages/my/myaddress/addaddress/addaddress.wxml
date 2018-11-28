@@ -1,4 +1,4 @@
-<view style="">
+<view class="all" >
 <view style="padding:10px 30px; border-bottom: 1px solid #ddd;">
 <label >收货人:</label>
 
