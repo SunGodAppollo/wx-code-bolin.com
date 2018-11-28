@@ -116,9 +116,10 @@ Page({
   },
 
   //修改收货地址
-  editaddress:function(){
+  editaddress:function(e){
+    var id=e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '/pages/my/myaddress/editaddress/editaddress'
+      url: '/pages/my/myaddress/editaddress/editaddress?id='+id
     })
   },
 

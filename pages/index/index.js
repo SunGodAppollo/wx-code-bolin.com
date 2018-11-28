@@ -8,7 +8,6 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     activityimg:'',
-    activit:[1,2,3,],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数

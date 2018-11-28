@@ -25,7 +25,7 @@
 
 
   <view class="bottom-right" style="margin-right:10px;">
-  <image bindtap="editaddress" class="fl" mode="aspectFit" style="display: inline;margin: 10px;width: 20px;height:20px;" src="/public/img/edit.png"></image>
+  <image data-id="{{item.id}}" bindtap="editaddress" class="fl" mode="aspectFit" style="display: inline;margin: 10px;width: 20px;height:20px;" src="/public/img/edit.png"></image>
   <view class="fl" style="line-height:40px;">编辑</view>
   <image data-id="{{item.id}}" bindtap="deladdress"  class="fl" mode="aspectFit" style="display: inline;margin: 10px;width: 20px;height:20px;" src="/public/img/del.png"></image>
   <view class="fl" style="line-height:40px;">删除</view>
