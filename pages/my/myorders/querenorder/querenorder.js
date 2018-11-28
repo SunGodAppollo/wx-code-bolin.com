@@ -104,13 +104,19 @@ Page({
   },
   /* 加数 */
   addCount: function (e) {
+    var sindex=e.target.dataset.sindex;
     var index = e.target.dataset.index;
+    console.log(index);
     console.log("刚刚您点击了加+");
     var count = this.data.count;
-    console.log(count);
+    var totalOrderAmount=this.data.alldata.totalOrderAmount;
+    var addprice=this.data.suc[sindex].infos[index].price;
+    console.log(totalOrderAmount);
+    console.log(addprice);
     // 商品总数量+1
     this.setData({
-      count: count+1
+      count: count+1,
+      //alldata.totalOrderAmount:totalOrderAmount+addprice,
     });
 
 
@@ -118,6 +124,7 @@ Page({
   /* 减数 */
   delCount: function (e) {
     var index = e.target.dataset.index;
+    console.log(index);
     console.log("刚刚您点击了加一");
     var count = this.data.count;
     // 商品总数量-1
@@ -126,7 +133,7 @@ Page({
         count: count-1
       });
     }
-  
+
   },
 
 

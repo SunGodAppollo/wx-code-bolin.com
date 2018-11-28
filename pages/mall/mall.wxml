@@ -1,7 +1,7 @@
 
 
 <view class='shop'>
-<navigator url="/pages/mall/serch/serch" hover-class="navigator-hover">
+<navigator url="/pages/mall/serch/serch1" hover-class="navigator-hover">
 	<include src="components/search/search.wxml" />
 </navigator>
 <view class='topTabSwiper'>

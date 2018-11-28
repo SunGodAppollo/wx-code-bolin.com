@@ -12,9 +12,9 @@
   </view>
   <view>详细地址:{{address.provincialCity}}</view>
   </view>
-  <block wx:for="{{suc}}" wx:key="key">
-  <view style="background-color:#fff"><image style="display:block;" mode="aspectFit" src="/public/img/mall.png"  style="height:20px;width:20px;"/>{{item.shopName}}</view>
-  <block wx:for="{{item.infos}}"  wx:for-item="goods">
+  <block wx:for="{{suc}}" wx:key="key" wx:for-index="sindex">
+  <view style="margin-top: 10px;background-color:#fff"><image style="display:block;" mode="aspectFit" src="/public/img/mall.png"  style="height:20px;width:20px;"/>{{item.shopName}}</view>
+  <block wx:for="{{item.infos}}"  wx:for-item="goods" wx:for-index="i">
   <view class="pd xing" style="background-color:#fff">
   <view class="fl left">
       <image mode="aspectFit" src="{{goods.imgUrl}}"  style="height:80px;width:80px;"/>
@@ -27,26 +27,27 @@
   </view>
   <view class="clear"></view>
   </view>
-  </block>
-</block>
-
-  <view class="pd info" style="background-color:#fff">
-  <view class="info-item">
+  <view class="info-item" style='background-color:#fff'>
     <view class="fl">购买数量:</view>
     <view class="fr">
       <!-- 主容器 -->
   <view class="stepper">
       <!-- 减号 -->
-      <text class="{{count <= 1 ? 'disabled' : 'normal'}}" bindtap="delCount" data-index="{{index}}">-</text>
+      <text class="{{count <= 1 ? 'disabled' : 'normal'}}" bindtap="delCount" data-sindex="{{sindex}}" data-index="{{i}}">-</text>
       <!-- 数值 -->
       <input type="number" bindchange="bindManual" value="{{count}}"  disabled="disabled"/>
       <!-- 加号 -->
-      <text class="{{count >= 10 ? 'disabled' : 'normal'}}" bindtap="addCount" data-index="{{index}}">+</text>
+      <text class="normal" bindtap="addCount" data-sindex="{{sindex}}" data-index="{{i}}">+</text>
   </view>
 
     </view>
     <view class="clear"></view>
   </view>
+  </block>
+</block>
+
+  <view class="pd info" style="background-color:#fff">
+
   <view class="info-item">
     <view class="fl">运费:</view>
     <view class="fr">{{alldata.totalFreight}}</view>
