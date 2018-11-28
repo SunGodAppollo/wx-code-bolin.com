@@ -138,6 +138,14 @@ cancelOrder:function(e){
 
 		});
 },
+//订单付款
+payOrder:function(){
+	var orderid=e.currentTarget.dataset.orderid;
+	wx.navigateTo({
+		url: '/pages/my/myaddress/addaddress/addaddress'
+	})
+}
+
 //确认收货
 confirm:function(e){
 	var that=this;
