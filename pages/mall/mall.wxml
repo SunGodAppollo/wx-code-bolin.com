@@ -1,14 +1,15 @@
+
+
 <view class='shop'>
 <navigator url="/pages/mall/serch/serch" hover-class="navigator-hover">
 	<include src="components/search/search.wxml" />
 </navigator>
 <view class='topTabSwiper'>
-<scroll-view style="height:100px;" scroll-x="true" scroll-left="0" >
-	<view class="scroll-x">
-	<block wx:for="{{fenlei}}" wx:key="key">
-    <view class='tab  {{currentData == index ? "tabBorer" : ""}}' data-fid = "{{item.id}}"  data-current = "{{index}}" bindtap='checkCurrent'>{{item.name}}</view>
+	<scroll-view scroll-x="true" style=" white-space: nowrap; display: flex" >
+	<!--  display: inline-block-->
+	<block wx:for="{{fenlei}}" wx:key="key1">
+	  <view  class='{{currentData == index ? "tabBorer" : ""}}' data-fid = "{{item.id}}"  data-current = "{{index}}" bindtap='checkCurrent' style="line-height: 90rpx;font-size:14px;text-align: center;margin: 0rpx 20rpx;background: #fff; width: 110rpx; height: 90rpx; display: inline-block" >{{item.name}}</view>
 	</block>
-	</view>
 	</scroll-view>
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">

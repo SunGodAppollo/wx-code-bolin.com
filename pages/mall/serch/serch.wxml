@@ -10,7 +10,7 @@
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
-    <block wx:for="{{goodslis}}">
+    <block wx:for="{{goodslis}}" wx:key="key">
     <view class="goods-item" bindtap="showInfo">
       <image  style="width: 100%; height: 70%; background-color: #eeeeee;" src="/public/img/good.jpg"></image>
       <text class="goods-title">{{item.title}}</text>
