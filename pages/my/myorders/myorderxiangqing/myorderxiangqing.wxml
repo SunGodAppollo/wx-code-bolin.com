@@ -1,5 +1,5 @@
 <view class="bottom nj">
-<view class="fl nj left">
+<view class="fl nj left" bindtap='goChatFunc'>
 <image mode="aspectFit" style="width: 20px;height:20px;" src="/public/img/chart-on.png"></image>
   联系卖家</view>
 <view class="fr nj right">

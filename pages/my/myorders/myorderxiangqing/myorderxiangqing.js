@@ -86,4 +86,10 @@ Page({
 
   		});
   },
+
+	goChatFunc: function() {
+		wx.navigateTo({
+			url: '/pages/chat/chat',
+		})
+	}
 })
