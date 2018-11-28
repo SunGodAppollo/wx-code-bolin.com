@@ -1,7 +1,7 @@
 <view  class="top">
 <view class="top-text">
   <view>当前积分</view>
-  <view>100</view>
+  <view>{{code}}</view>
 </view>
 </view>
 

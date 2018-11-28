@@ -18,7 +18,7 @@
 </view>
 
 <view class="pd hr">
-<view>王先生 18980004397</view>
+<view>{{order.deliveryName}} 18980004397</view>
 <view style="font-size:14px;">四川省成都市高新区二街环球时代中心2单元2楼</view>
 </view>
 

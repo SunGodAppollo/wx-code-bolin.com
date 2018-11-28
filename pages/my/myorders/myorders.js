@@ -10,7 +10,7 @@ Page({
 		state:0,
 		userid:0,
 		state:'0',//订单状态
-
+		orderlis:[],
 	},
 
 	/**
@@ -172,9 +172,10 @@ tuikuan:function(e){
 
 
 //订单详情
-orderxiangqing:function(){
+orderxiangqing:function(e){
+	var id=e.currentTarget.dataset.orderid;
 	wx.redirectTo({
-		 url: '/pages/my/myorders/myorderxiangqing/myorderxiangqing'
+		 url: '/pages/my/myorders/myorderxiangqing/myorderxiangqing?id='+id
  });
 },
 

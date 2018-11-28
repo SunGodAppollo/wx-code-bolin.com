@@ -15,7 +15,7 @@
   </view>
 
   <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
-  <view class="oder-zhong" bindtap="orderxiangqing">
+  <view class="oder-zhong" data-orderid="{{item.id}}" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
     <view class="oder-zhong-right">
@@ -50,7 +50,7 @@
   </view>
 
   <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
-  <view class="oder-zhong" bindtap="orderxiangqing">
+  <view class="oder-zhong" data-orderid="{{item.id}}" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
     <view class="oder-zhong-right">
@@ -83,7 +83,7 @@
   </view>
 
   <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
-  <view class="oder-zhong" bindtap="orderxiangqing">
+  <view class="oder-zhong" data-orderid="{{item.id}}" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
     <view class="oder-zhong-right">
@@ -116,7 +116,7 @@
   </view>
 
   <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
-  <view class="oder-zhong" bindtap="orderxiangqing">
+  <view class="oder-zhong" data-orderid="{{item.id}}" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
     <view class="oder-zhong-right">
@@ -149,7 +149,7 @@
   </view>
 
   <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
-  <view class="oder-zhong" bindtap="orderxiangqing">
+  <view class="oder-zhong" data-orderid="{{item.id}}" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
     <view class="oder-zhong-right">
