@@ -11,7 +11,9 @@ Page({
     address:[],
     suc:[],
     alldata:[],
-	  carIds: ""
+	  carIds: "",
+    index:1,
+    count:1,
   },
 
   /**
@@ -100,6 +102,35 @@ Page({
         });
       });
   },
+  /* 加数 */
+  addCount: function (e) {
+    var index = e.target.dataset.index;
+    console.log("刚刚您点击了加+");
+    var count = this.data.count;
+    console.log(count);
+    // 商品总数量+1
+    this.setData({
+      count: count+1
+    });
+
+
+  },
+  /* 减数 */
+  delCount: function (e) {
+    var index = e.target.dataset.index;
+    console.log("刚刚您点击了加一");
+    var count = this.data.count;
+    // 商品总数量-1
+    if (count > 1) {
+      this.setData({
+        count: count-1
+      });
+    }
+  
+  },
+
+
+
   //提交订单
   tijiao:function(){
     var that=this;

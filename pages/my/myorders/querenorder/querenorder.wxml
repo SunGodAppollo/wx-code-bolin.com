@@ -12,7 +12,7 @@
   </view>
   <view>详细地址:{{address.provincialCity}}</view>
   </view>
-  <block wx:for="{{suc}}">
+  <block wx:for="{{suc}}" wx:key="key">
   <view style="background-color:#fff"><image style="display:block;" mode="aspectFit" src="/public/img/mall.png"  style="height:20px;width:20px;"/>{{item.shopName}}</view>
   <block wx:for="{{item.infos}}"  wx:for-item="goods">
   <view class="pd xing" style="background-color:#fff">
@@ -34,7 +34,16 @@
   <view class="info-item">
     <view class="fl">购买数量:</view>
     <view class="fr">
-      <view class="van-stepper__minus van-stepper__minus--disabled van-stepper__minus">-</view>1<view style="display:inline;border: 1px solid #ddd;">+</view>
+      <!-- 主容器 -->
+  <view class="stepper">
+      <!-- 减号 -->
+      <text class="{{count <= 1 ? 'disabled' : 'normal'}}" bindtap="delCount" data-index="{{index}}">-</text>
+      <!-- 数值 -->
+      <input type="number" bindchange="bindManual" value="{{count}}"  disabled="disabled"/>
+      <!-- 加号 -->
+      <text class="{{count >= 10 ? 'disabled' : 'normal'}}" bindtap="addCount" data-index="{{index}}">+</text>
+  </view>
+
     </view>
     <view class="clear"></view>
   </view>
