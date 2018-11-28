@@ -12,7 +12,7 @@
 	</block>
 	</scroll-view>
 </view>
-<swiper current="{{currentData}}" class='swiper' style="height:100vh;" duration="300" bindchange="bindchange">
+<swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
 	<block wx:for="{{fenlei}}" wx:key="key" wx:for-item="itemName">
 	<swiper-item><view class='swiper_con'>
     <block wx:for="{{goodslis}}" wx:key="key">

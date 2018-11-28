@@ -34,7 +34,7 @@
   <view class="info-item">
     <view class="fl">购买数量:</view>
     <view class="fr">
-      1
+      <view class="van-stepper__minus van-stepper__minus--disabled van-stepper__minus">-</view>1<view style="display:inline;border: 1px solid #ddd;">+</view>
     </view>
     <view class="clear"></view>
   </view>

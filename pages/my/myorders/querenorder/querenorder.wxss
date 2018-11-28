@@ -26,3 +26,11 @@ padding: 10px;
   text-align: right;
   margin-right: 30px;
 }
+.van-stepper__minus, .van-stepper__plus {
+    width: 50rpx;
+    height: 50rpx;
+    box-sizing: border-box;
+    border: 1px solid #eee;
+    position: relative;
+    padding: 5px;
+}

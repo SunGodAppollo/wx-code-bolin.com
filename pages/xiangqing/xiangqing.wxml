@@ -41,6 +41,7 @@
     <block wx:for="{{goods.detailsImgs}}" wx:key="key">
     <image  style=" width: 100%; background-color: #eeeeee;" src="{{item}}"></image>
     </block>
+    <view style="height:50px;width:750rpx;"></view>
   </view></swiper-item>
 
   <swiper-item><view class='swiper_con'>

@@ -139,12 +139,22 @@ cancelOrder:function(e){
 		});
 },
 //订单付款
-payOrder:function(){
-	var orderid=e.currentTarget.dataset.orderid;
+payOrder:function(e){
+	var payid=e.currentTarget.dataset.orderid;
+	var payNum=e.currentTarget.dataset.paynum;
+	var payAmount=e.currentTarget.dataset.payamount;
 	wx.navigateTo({
-		url: '/pages/my/myaddress/addaddress/addaddress'
+		url: '/pages/pay/pay?payid='+payid+'&payNum='+payNum+'&payAmount'+payAmount
 	})
 },
+//联系客服
+kefu:function(){
+	wx.navigateTo({
+		url: '/pages/chat/chat'
+	})
+},
+
+
 
 //确认收货
 confirm:function(e){
