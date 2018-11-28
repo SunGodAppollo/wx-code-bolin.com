@@ -110,6 +110,41 @@ topstaus:function(){
 
 		});
 },
+///order/cancelOrder
+//取消订单
+cancelOrder:function(e){
+	var that=this;
+	var userid=wx.getStorageSync("user").id;
+	var orderid=e.currentTarget.dataset.orderid;
+	console.log(e);
+	console.log(orderid);
+	var url='/order/cancelOrder';
+		var data={userId:userid,orderId:orderid};
+		app.post(url,data,function(resData){
+			console.log(resData);
+			wx.showToast({
+					 title: resData.message,
+					 icon: 'succes',
+					 duration: 2000,
+					 mask:true,
+
+					 success:function(){
+						 setTimeout(function() {
+							 that.getorederlist();
+						 },2000);
+					 }
+			 });
+
+
+		});
+},
+//申请退款
+addaddress:function(e){
+	var orderid=e.currentTarget.dataset.orderid;
+	wx.navigateTo({
+		url: '/pages/rufund/rufund?id='+orderid
+	})
+},
 
 
 //订单详情
@@ -127,7 +162,6 @@ getorederlist:function(){
 	var url='/order/getList';
 		var data={pageNumber:'1',pageSize:'10',userId:userid,state:state};
 		app.post(url,data,function(resData){
-			console.log(1);
 			console.log(resData);
 			that.setData({
 				orderlis:resData.rows

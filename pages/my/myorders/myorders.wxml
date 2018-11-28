@@ -35,7 +35,7 @@
   </view>
   <view class="oder-bottom clear">
   <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">退款</view>
+  <view data-orderId="{{item.id}}" bindtap="cancelOrder" class="btn btn-off right">取消订单</view>
   </view>
   </view>
   </block>
@@ -99,7 +99,7 @@
   </block>
 
   <view>
-  <view class="allPrice">总价<span style="color:red">590.00</span></view>
+  <view class="allPrice">总价<span style="color:red">￥{{item.paymoney}}</span></view>
   </view>
   <view class="oder-bottom clear">
   <view class="btn btn-on right">确认收货</view>
