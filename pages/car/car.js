@@ -305,11 +305,11 @@ Page({
 			number: number
 		},function(r) {
 			if(r.code === 0) {
-				self.computAllMoneyFunc();
 				arr[index].product[num].number = number;
 				self.setData({
 					lists: arr
 				})
+				self.computAllMoneyFunc();
 			}else{
 				arr[index].product[num].number = number - 1;
 				arr[index].product[num].maxShopNum = number - 1;
