@@ -24,7 +24,8 @@ Page({
 		  that.setData({
 			  alldata: resData.data,
 			  address: resData.data.deaddr,
-			  suc: resData.data.suc,
+        suc: resData.data.suc,
+        userid: wx.getStorageSync("user").id,
 		  });
 	}else{
 		var info = "[{'shopId': '" + options.shopid + "','infos': [{'productId': '" + options.goodsid + "','num': '1'}]}]";
