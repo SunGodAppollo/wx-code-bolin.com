@@ -138,6 +138,30 @@ cancelOrder:function(e){
 
 		});
 },
+//确认收货
+confirm:function(e){
+	var that=this;
+	var orderid=e.currentTarget.dataset.orderid;
+	var userid=wx.getStorageSync("user").id;
+	var url='/order/confirmShOrder';
+		var data={userId:userid,orderId:orderid};
+		app.post(url,data,function(resData){
+			console.log(resData);
+			wx.showToast({
+					 title: resData.message,
+					 icon: 'succes',
+					 duration: 2000,
+					 mask:true,
+
+					 success:function(){
+						 setTimeout(function() {
+							 that.getorederlist();
+						 },2000);
+					 }
+			 });
+		});
+},
+
 //申请退款
 tuikuan:function(e){
 	var orderid=e.currentTarget.dataset.orderid;

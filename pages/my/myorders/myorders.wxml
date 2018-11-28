@@ -102,7 +102,7 @@
   <view class="allPrice">总价<span style="color:red">￥{{item.paymoney}}</span></view>
   </view>
   <view class="oder-bottom clear">
-  <view class="btn btn-on right">确认收货</view>
+  <view data-orderid="{{item.id}}"  bindtap="confirm" class="btn btn-on right">确认收货</view>
   </view>
   </view>
   </block>
