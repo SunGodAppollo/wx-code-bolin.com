@@ -92,7 +92,7 @@ checkCurrent:function(e){
 			currentData: e.target.dataset.current,
 			state:e.target.dataset.current
 		});
-		that.orderxiangqing();
+		that.getorederlist();
 	}
 },
 //顶部状态

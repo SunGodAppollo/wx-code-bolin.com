@@ -1,9 +1,9 @@
 <view class='topTabSwiper'>
-    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>待付款</view>
-    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>待发货</view>
-    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'>待收货</view>
-    <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'>待评价</view>
-    <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "5" bindtap='checkCurrent'>售后</view>
+    <view class='tab  {{currentData == 0 ? "tabBorer" : ""}}'  data-current = "0" bindtap='checkCurrent'>待付款</view>
+    <view class='tab  {{currentData == 1 ? "tabBorer" : ""}}'  data-current = "1" bindtap='checkCurrent'>待发货</view>
+    <view class='tab  {{currentData == 2 ? "tabBorer" : ""}}'  data-current = "2" bindtap='checkCurrent'>待收货</view>
+    <view class='tab  {{currentData == 3 ? "tabBorer" : ""}}'  data-current = "3" bindtap='checkCurrent'>待评价</view>
+    <view class='tab  {{currentData == 4 ? "tabBorer" : ""}}'  data-current = "4" bindtap='checkCurrent'>售后</view>
 </view>
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
@@ -35,7 +35,7 @@
   </view>
   <view class="oder-bottom clear">
   <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">去付款</view>
+  <view class="btn btn-off right">退款</view>
   </view>
   </view>
   </block>
@@ -49,7 +49,7 @@
     <view class="oder-top-right">订单时间:{{item.createTime}}</view>
   </view>
 
-  <block wx:for="{{item.product}}" wx:for-item="goods">
+  <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
   <view class="oder-zhong" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
@@ -69,8 +69,7 @@
   <view class="allPrice">总价<span style="color:red">590.00</span></view>
   </view>
   <view class="oder-bottom clear">
-  <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">去付款</view>
+  <view class="btn btn-on right">催发货</view>
   </view>
   </view>
   </block>
@@ -83,7 +82,7 @@
     <view class="oder-top-right">订单时间:{{item.createTime}}</view>
   </view>
 
-  <block wx:for="{{item.product}}" wx:for-item="goods">
+  <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
   <view class="oder-zhong" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
@@ -103,8 +102,7 @@
   <view class="allPrice">总价<span style="color:red">590.00</span></view>
   </view>
   <view class="oder-bottom clear">
-  <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">去付款</view>
+  <view class="btn btn-on right">确认收货</view>
   </view>
   </view>
   </block>
@@ -117,7 +115,7 @@
     <view class="oder-top-right">订单时间:{{item.createTime}}</view>
   </view>
 
-  <block wx:for="{{item.product}}" wx:for-item="goods">
+  <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
   <view class="oder-zhong" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
@@ -137,8 +135,7 @@
   <view class="allPrice">总价<span style="color:red">590.00</span></view>
   </view>
   <view class="oder-bottom clear">
-  <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">去付款</view>
+  <view class="btn btn-on right">评价</view>
   </view>
   </view>
   </block>
@@ -151,7 +148,7 @@
     <view class="oder-top-right">订单时间:{{item.createTime}}</view>
   </view>
 
-  <block wx:for="{{item.product}}" wx:for-item="goods">
+  <block wx:for="{{item.product}}" wx:for-item="goods" wx:key="goodskey">
   <view class="oder-zhong" bindtap="orderxiangqing">
   <view>
     <image  class="oder-zhong-left" src="{{goods.imgUrl}}"></image>
@@ -171,8 +168,7 @@
   <view class="allPrice">总价<span style="color:red">590.00</span></view>
   </view>
   <view class="oder-bottom clear">
-  <view class="btn btn-on right">去付款</view>
-  <view class="btn btn-off right">去付款</view>
+  <view class="btn btn-on right">联系售后</view>
   </view>
   </view>
   </block>
