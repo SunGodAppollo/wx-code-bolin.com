@@ -7,7 +7,7 @@
       <view class="fr">{{item.phone}}</view>
       <view class="clear"></view>
     </view>
-    <view style="margin-top:10px;">详细地址:{{item.provincialCity}}</view>
+    <view style="margin-top:10px;">收货地址:{{item.provincialCity}}{{item.detailedPath}}</view>
   </view>
 
 
