@@ -168,6 +168,7 @@
   <view class="allPrice">总价<span style="color:red">590.00</span></view>
   </view>
   <view class="oder-bottom clear">
+  <view data-orderid="{{item.id}}" bindtap="tuikuan" class="btn btn-off right">退款</view>
   <view class="btn btn-on right">联系售后</view>
   </view>
   </view>

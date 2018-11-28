@@ -1,13 +1,15 @@
+<view class="content">
 <view class="top-view">
-    <image  style="width: 100%; height: 100px; background-color: #eeeeee;"  src="{{activityimg}}"></image>
+    <image class="top-img"   src="{{activityimg}}"></image>
 </view>
 
 <view class="title">
   最新活动
 </view>
 <block wx:for="{{rows}}" wx:key="key">
-<view class="top-view" data-id="{{item.id}}" bindtap="show">
-    <image  style="width: 100%; height: 150px; background-color: #eeeeee;"  src="{{item.imgPath}}"></image>
+<view class="item" data-id="{{item.id}}" bindtap="show">
+    <image class="item-img" src="{{item.imgPath}}"></image>
     <view class="text">{{item.title}}</view>
 </view>
 </block>
+</view>

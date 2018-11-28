@@ -139,10 +139,10 @@ cancelOrder:function(e){
 		});
 },
 //申请退款
-addaddress:function(e){
+tuikuan:function(e){
 	var orderid=e.currentTarget.dataset.orderid;
 	wx.navigateTo({
-		url: '/pages/rufund/rufund?id='+orderid
+		url: '/pages/refund/refund?id='+orderid
 	})
 },
 
