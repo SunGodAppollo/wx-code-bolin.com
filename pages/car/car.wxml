@@ -10,7 +10,7 @@
         <button class='car-fixed-button' bindtap='submitFunc'>结算</button>
     </view>
 
-    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}" wx:if="{{item.shopShow}}" style='padding-top:30rpx;'>
+    <view class='car-box' wx:for="{{lists}}" wx:key="{{index}}" wx:if="{{item.shopShow}}">
         <view style="height:30rpx;background-color:#f5f5f5;"></view>
         <view class='car-box-first'>
             <!-- <checkbox-group bindchange="checkboxShopChange"> -->

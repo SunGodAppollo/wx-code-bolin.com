@@ -10,7 +10,8 @@
         <!-- <view class='top' wx:for="{{lists}}" wx:key="{{index}}" bindtap='toDetailsFunc'> -->
         <view class='top' wx:for="{{lists}}" wx:key="{{index}}">
             <view class='top-main'>
-                <image class='top-main-bg' src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+                <image class='top-main-bg' wx:if="{{item.backgroundPicUrl===''}}" src='/public/img/my_top_bg.png' mode='aspectFill'></image>
+                <image class='top-main-bg' wx:else src='{{item.backgroundPicUrl}}' mode='aspectFill'></image>
                 <view class='top-main-box'>
                     <view class='top-main-first'>
                         <!-- <image class='top-main-first-title' src='' mode='aspectFill'></image> -->
