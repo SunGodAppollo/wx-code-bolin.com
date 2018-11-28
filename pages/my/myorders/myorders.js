@@ -144,7 +144,7 @@ payOrder:function(){
 	wx.navigateTo({
 		url: '/pages/my/myaddress/addaddress/addaddress'
 	})
-}
+},
 
 //确认收货
 confirm:function(e){

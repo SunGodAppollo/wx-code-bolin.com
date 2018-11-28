@@ -1,7 +1,16 @@
 <view class="content">
 <view class="top-view">
-    <image class="top-img"   src="{{activityimg}}"></image>
+  <swiper indicator-dots="true"
+          autoplay="true" interval="2000" duration="1000" circular="true">
+        <block wx:for="{{activityimg}}" wx:key="key">
+          <swiper-item>
+              <image class="top-img"   src="{{item.imgPath}}"></image>
+          </swiper-item>
+        </block>
+  </swiper>
 </view>
+
+
 
 <view class="title">
   最新活动

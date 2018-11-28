@@ -8,6 +8,7 @@ Page({
     userInfo: {},
     hasUserInfo: false,
     activityimg:'',
+    activit:[1,2,3,],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数
@@ -75,7 +76,7 @@ Page({
     var data={};
       app.post(url,data,function(resData){
         that.setData({
-          activityimg:resData.data[0].imgPath
+          activityimg:resData.data
         })
         console.log(resData);
       });
