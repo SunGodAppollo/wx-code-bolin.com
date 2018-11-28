@@ -8,6 +8,7 @@ Page({
 	data: {
 		currentData:0,
 		state:0,
+		youhuilis:[],
 	},
 
 	/**
@@ -85,8 +86,10 @@ Page({
     }else{
 
       that.setData({
-        currentData: e.target.dataset.current
-      })
+        currentData: e.target.dataset.current,
+				state: e.target.dataset.current
+      });
+			that.getyouhuijuan();
     }
   },
 	//获取优惠卷
@@ -100,9 +103,9 @@ Page({
 		};
 			app.post(url,data,function(resData){
 				console.log(resData);
-				// that.setData({
-				// 	goodslis:resData.rows,
-				// })
+				 that.setData({
+				 	youhuilis:resData.rows,
+				 })
 
 			});
 	}

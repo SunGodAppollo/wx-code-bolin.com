@@ -22,7 +22,7 @@
     <view class="goods-title">{{goods.name}}</view>
     <view >
       <view  class="goods-left">￥590.00</view>
-      <view  class="goods-right">x{{item.num}}</view>
+      <view  class="goods-right">x{{goods.buyCount}}</view>
     </view>
     </view>
   </view>
@@ -57,7 +57,7 @@
     <view class="goods-title">{{goods.name}}</view>
     <view >
       <view  class="goods-left">￥590.00</view>
-      <view  class="goods-right">x{{item.num}}</view>
+      <view  class="goods-right">x{{goods.buyCount}}</view>
     </view>
     </view>
   </view>
@@ -90,7 +90,7 @@
     <view class="goods-title">{{goods.name}}</view>
     <view >
       <view  class="goods-left">￥590.00</view>
-      <view  class="goods-right">x{{item.num}}</view>
+      <view  class="goods-right">x{{goods.buyCount}}</view>
     </view>
     </view>
   </view>
@@ -123,7 +123,7 @@
     <view class="goods-title">{{goods.name}}</view>
     <view >
       <view  class="goods-left">￥590.00</view>
-      <view  class="goods-right">x{{item.num}}</view>
+      <view  class="goods-right">x{{item.buyCount}}</view>
     </view>
     </view>
   </view>
@@ -156,7 +156,7 @@
     <view class="goods-title">{{goods.name}}</view>
     <view >
       <view  class="goods-left">￥590.00</view>
-      <view  class="goods-right">x{{item.num}}</view>
+      <view  class="goods-right">x{{goods.buyCount}}</view>
     </view>
     </view>
   </view>

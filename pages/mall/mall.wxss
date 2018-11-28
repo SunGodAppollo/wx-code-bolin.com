@@ -45,6 +45,6 @@ height: 90rpx;
 .goods-title{font-size:14px;color: #333;margin: 25rpx 16rpx;text-align: left;overflow: hidden;
 text-overflow:ellipsis;
 white-space: nowrap;}
-.goods-info-left{font-size:12px;float: left; color: red}
-.goods-info-right{font-size:12px;color: #666;float: right;}
+.goods-info-left{font-size:28rpx;float: left; color: red}
+.goods-info-right{font-size:28rpx;color: #666;float: right;}
 .goods-info{margin: 0 16rpx;}
