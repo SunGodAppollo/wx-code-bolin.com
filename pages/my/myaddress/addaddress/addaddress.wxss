@@ -3,6 +3,6 @@ margin-top: 80px;
 width: 80%;
 }
 .all{
-/*font-size:28rpx;
-text-align: left;*/
+font-size:28rpx;
+text-align: left;
 }

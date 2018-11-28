@@ -38,8 +38,9 @@
 <swiper current="{{currentData}}" class='swiper' style="height:10000px;" duration="300" bindchange="bindchange">
   <swiper-item><view class='swiper_con'>
   <view>{{goods.details}}</view>
-    <image  style=" width: 100%; background-color: #eeeeee;" src="{{goods.detailsImgs}}"></image>
-
+    <block wx:for="{{goods.detailsImgs}}" wx:key="key">
+    <image  style=" width: 100%; background-color: #eeeeee;" src="{{item}}"></image>
+    </block>
   </view></swiper-item>
 
   <swiper-item><view class='swiper_con'>
