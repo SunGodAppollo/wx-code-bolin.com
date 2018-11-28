@@ -1,18 +1,26 @@
 // pages/my/myorders/myorderxiangqing/myorderxiangqing.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    id:'',
+    order:'',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that=this;
+    console.log(options);
 
+    that.setData({
+      id:options.id,
+    });
+    that.getxiangqing();
   },
 
   /**
@@ -62,5 +70,20 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  //获取订单详情
+  getxiangqing:function(){
+    var that=this;
+  	var id=that.data.id;
+    var userid=wx.getStorageSync("user").id;
+  	var url='/order/getOrderDetails';
+  		var data={orderId:id,userId:userid,};
+  		app.post(url,data,function(resData){
+  			console.log(resData);
+  			that.setData({
+  				order:resData.data,
+  			})
+
+  		});
+  },
 })
