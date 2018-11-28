@@ -16,7 +16,12 @@ Page({
 	 * 生命周期函数--监听页面加载
 	 */
 	onLoad: function (options) {
-
+		var self = this;
+		if(options.id) {
+			self.setData({
+				orderProuctId: options.id
+			})
+		}
 	},
 
 	/**
@@ -172,7 +177,16 @@ Page({
 				imgs: self.data.imgs
 			},function(r) {
 				if(r.code === 0) {
-
+					wx.showToast({
+						title: r.message,
+						icon: 'none',
+						duration: 2000
+					})
+					setTimeout(function(){
+						wx.navigateBack({
+							delta: 1
+						})
+					},2000)
 				}
 			})
 		}
