@@ -10,19 +10,7 @@ Page({
 		state:0,
 		userid:0,
 		state:'0',//订单状态
-		oderlist:[
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'},
-		{num:'1'}
-	]
+
 	},
 
 	/**
@@ -101,25 +89,26 @@ checkCurrent:function(e){
 	}else{
 
 		that.setData({
-			currentData: e.target.dataset.current
-		})
+			currentData: e.target.dataset.current,
+			state:e.target.dataset.current
+		});
+		that.orderxiangqing();
 	}
 },
 //顶部状态
 topstaus:function(){
 	var that=this;
-	var userid=that.data.userid;
+	var userid=wx.getStorageSync("user").id;
 	var state=that.data.state;
 	var url='/order/getList';
-		var data={pageNumber:'1',pageSize:'10',userId:userid,state:state};
+		var data={userId:userid,state:state};
 		app.post(url,data,function(resData){
-			console.log(resData);
+			console.log(resData.rows);
 			that.setData({
-				goodslis:resData,
+				orderlis:resData.rows
 			})
 
 		});
-
 },
 
 
@@ -138,9 +127,10 @@ getorederlist:function(){
 	var url='/order/getList';
 		var data={pageNumber:'1',pageSize:'10',userId:userid,state:state};
 		app.post(url,data,function(resData){
+			console.log(1);
 			console.log(resData);
 			that.setData({
-				goodslis:resData,
+				orderlis:resData.rows
 			})
 
 		});
