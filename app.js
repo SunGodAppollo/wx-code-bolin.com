@@ -35,25 +35,6 @@ App({
 		})
 	},
 	post: function (url, data, func) {
-		if (!wx.getStorageSync("user")) {
-			let pages = getCurrentPages();
-			let currPage = null;
-			if (pages.length) {
-				currPage = pages[pages.length - 1];
-			}
-			getApp().globalData.routerName = currPage.__route__;
-			wx.showToast({
-				title: "登录已失效,请重新登录",
-				icon: 'none',
-				duration: 2000
-			})
-			setTimeout(function () {
-				wx.redirectTo({
-					url: '/pages/login/login'
-				})
-				return;
-			}, 2000)
-		}
 		wx.showLoading({
 			title: '加载中',
 		});
@@ -72,6 +53,24 @@ App({
 						icon: 'none',
 						duration: 1500
 					})
+				}
+				if (r.data.message === "用户不存在") {
+					let pages = getCurrentPages();
+					let currPage = null;
+					if (pages.length) {
+						currPage = pages[pages.length - 1];
+					}
+					getApp().globalData.routerName = currPage.__route__;
+					wx.showToast({
+						title: "登录已失效,请重新登录",
+						icon: 'none',
+						duration: 2000
+					})
+					setTimeout(function () {
+						wx.redirectTo({
+							url: '/pages/login/login'
+						})
+					}, 2000)
 				}
 				return func(r.data);
 			},
